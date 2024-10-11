@@ -99,6 +99,5 @@ export interface EditedUserType {
 export interface VibeDataType {
     content: string
     badLabels: string[]
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     image: any
 }
