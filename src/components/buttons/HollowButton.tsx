@@ -13,9 +13,9 @@ function HollowButton({ onClick, text, dark, children }: HollowButtonProps) {
     return (
         <Button
             onClick={onClick}
-            minWidth={'100px'}
-            variant={'outline'}
-            borderRadius={''}
+            minWidth={'50px'}
+            variant={'variant'}
+            borderRadius={'9'}
             border={'1px'}
             px={'1.25rem'}
             fontSize={fontSizing.small}

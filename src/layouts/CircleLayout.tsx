@@ -6,7 +6,8 @@ import Navigation from '@/components/navigations/Navigation'
 
 function CircleLayout() {
     return (
-        <Grid templateColumns={'repeat(24, 1fr)'}>
+        <>
+         <Grid templateColumns={'repeat(24, 2fr)'} >
             <GridItem colSpan={5}>
                 <SideBar>
                     <Navigation />
@@ -16,6 +17,7 @@ function CircleLayout() {
                 <Outlet />
             </GridItem>
         </Grid>
+        </>
     )
 }
 
