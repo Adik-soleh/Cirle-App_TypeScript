@@ -1,0 +1,86 @@
+{
+    "vibes": [
+      {
+        "id": 1,
+        "content": "This is a cool vibe about coding and technology!",
+        "image": "https://picsum.photos/500/300",
+        "createdAt": "2024-10-15T12:34:56Z",
+        "authorId": 101,
+        "totalReplies": 5,
+        "totalLikes": 15,
+        "isLiked": true,
+        "badLabels": [],
+        "author": {
+          "id": 101,
+          "username": "techguru",
+          "name": "Tech Guru",
+          "email": "techguru@example.com",
+          "avatar": "https://api.dicebear.com/8.x/thumbs/svg?seed=Gizmo",
+          "banner": "https://picsum.photos/1600/400",
+          "bio": "Sharing the latest in tech and programming!",
+          "totalFollower": 120,
+          "totalFollowing": 100,
+          "followers": [],
+          "followings": [],
+          "isFollowed": false,
+          "vibes": [],
+          "filterContent": false
+        }
+      },
+      {
+        "id": 2,
+        "content": "Just attended a great coding workshop!",
+        "image": null,
+        "createdAt": "2024-10-14T10:00:00Z",
+        "authorId": 102,
+        "totalReplies": 2,
+        "totalLikes": 8,
+        "isLiked": false,
+        "badLabels": ["spam"],
+        "author": {
+          "id": 102,
+          "username": "coder123",
+          "name": "Alice Johnson",
+          "email": "alice@example.com",
+          "avatar": "https://api.dicebear.com/8.x/thumbs/svg?seed=Alice",
+          "banner": "https://picsum.photos/1600/400?blur=2",
+          "bio": "I love coding in JavaScript and Python!",
+          "totalFollower": 200,
+          "totalFollowing": 180,
+          "followers": [],
+          "followings": [],
+          "isFollowed": true,
+          "vibes": [],
+          "filterContent": true
+        }
+      },
+      {
+        "id": 3,
+        "content": "Exploring new front-end frameworks. Any suggestions?",
+        "image": "https://picsum.photos/800/600",
+        "createdAt": "2024-10-13T16:30:00Z",
+        "authorId": 103,
+        "totalReplies": 10,
+        "totalLikes": 22,
+        "isLiked": true,
+        "badLabels": [],
+        "author": {
+          "id": 103,
+          "username": "frontendfan",
+          "name": "Jane Doe",
+          "email": "jane@example.com",
+          "avatar": "https://api.dicebear.com/8.x/thumbs/svg?seed=Jane",
+          "banner": "https://picsum.photos/1600/400",
+          "bio": "Passionate about front-end development.",
+          "totalFollower": 150,
+          "totalFollowing": 50,
+          "followers": [],
+          "followings": [],
+          "isFollowed": false,
+          "vibes": [],
+          "filterContent": false
+        }
+      }
+    ]
+  }
+  
