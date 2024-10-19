@@ -24,7 +24,7 @@ function LoginPage() {
 
     async function loginHandler(data: LoginDataType) {
         // Find user in fake data
-        const user = fakeData.find(
+        const user = fakeData.fakeUsers.find(
             (user) => user.username === data.username
         );
 

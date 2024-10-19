@@ -26,7 +26,7 @@ function SearchPage() {
     const [isLoading, setLoading] = useState<boolean>(false)
 
     const debounced = useDebouncedCallback((keyword) => {
-        const filteredResults = fakeData.filter(user => 
+        const filteredResults = fakeData.fakeUsers.filter(user => 
             user.username.includes(keyword) || user.name.includes(keyword)
         );
         setSearchResult(filteredResults);

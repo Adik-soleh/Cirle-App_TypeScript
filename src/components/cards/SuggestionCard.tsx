@@ -20,7 +20,7 @@ function SuggestionCard() {
         const getUsers = () => {
             if (loggedUser) {
                 // Filter out users who are followed and the logged-in user
-                const filteredUsers = fakeData.filter(user => 
+                const filteredUsers = fakeData.fakeUsers.filter(user => 
                     !user.isFollowed && user.id !== loggedUser.id
                 );
 
