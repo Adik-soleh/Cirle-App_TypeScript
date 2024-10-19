@@ -19,8 +19,36 @@
       ],
       "followings": [],
       "isFollowed": false,
-      "vibes": [],
-      "filterContent": false
+      "filterContent": false,
+      "vibes": [
+        {
+          "id": 1,
+          "content": "Optimizing my code like a taijutsu master.",
+          "image": "https://w0.peakpx.com/wallpaper/454/815/HD-wallpaper-naruto-art-fictional-character-thumbnail.jpg",
+          "createdAt": "2024-10-09T13:15:00Z",
+          "authorId": 1,
+          "totalReplies": 8,
+          "totalLikes": 30,
+          "isLiked": true,
+          "badLabels": [],
+          "author": {
+            "id": 1,
+            "username": "user1",
+            "name": "Rock Lee",
+            "email": "rocklee@example.com",
+            "avatar": "https://api.dicebear.com/8.x/thumbs/svg?seed=RockLee",
+            "banner": "https://picsum.photos/1600/400",
+            "bio": "Hard work and code, nothing else.",
+            "totalFollower": 160,
+            "totalFollowing": 140,
+            "followers": [],
+            "followings": [],
+            "isFollowed": true,
+            "vibes": [],
+            "filterContent": false
+          }
+        }
+      ]
     },
     {
       "id": 2,
