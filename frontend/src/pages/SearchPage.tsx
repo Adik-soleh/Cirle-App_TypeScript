@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Box, Flex, Grid, GridItem } from '@chakra-ui/react'
 import { BiLeftArrowAlt, BiSearchAlt } from 'react-icons/bi'
+import { MdPersonSearch } from "react-icons/md";
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
@@ -55,13 +56,13 @@ function SearchPage() {
                         <IconInput
                             type={'text'}
                             placeholder={'search'}
-                            icon={<BiSearchAlt />}
+                            icon={<MdPersonSearch />}
                             name={'search'}
                             register={register}
                         />
                         <EmptyMessage
-                            header={'Need to stalk someone?'}
-                            body={"Chill! I'll keep your secret."}
+                            header={'want to find someone?'}
+                            body={"Have a nice day!!."}
                         />
                     </MainBar>
                 </GridItem>
