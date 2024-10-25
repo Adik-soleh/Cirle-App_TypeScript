@@ -6,10 +6,10 @@ export interface UserType {
     avatar: string
     banner: string
     bio: string | null
-    totalFollower: number
-    totalFollowing: number
     followers: FollowType[]
     followings: FollowType[]
+    totalFollower: number
+    totalFollowing: number
     isFollowed: boolean
     vibes: VibeType[]
     filterContent: boolean
@@ -63,7 +63,6 @@ export interface RegisterDataType {
 export interface LoginDataType {
     username: string
     password: string
-    
 }
 
 export interface ForgotDataType {
