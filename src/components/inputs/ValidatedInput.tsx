@@ -2,6 +2,7 @@ import GhostButton from '@/components/buttons/GhostButton'
 import { Box, Collapse, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react'
 import { useState } from 'react'
 import { FieldError, UseFormRegister, FieldValues, Path } from 'react-hook-form'
+import { LiaEyeSolid, LiaEyeSlashSolid } from 'react-icons/lia'
 
 interface ValidatedInputProps<T extends FieldValues> {
     autoFocus?: boolean
@@ -32,8 +33,8 @@ function ValidatedInput<T extends FieldValues>(props: ValidatedInputProps<T>) {
                 />
                 {type === 'password' && (
                     <InputRightElement width="4.5rem">
-                        <GhostButton color={'circle.dark'} onClick={togglePassword}>
-                            {showPassword ? 'Hide' : 'Show'}
+                        <GhostButton color={'white'} onClick={togglePassword}>
+                            {showPassword ? <LiaEyeSolid />  : <LiaEyeSlashSolid/>}
                         </GhostButton>
                     </InputRightElement>
                 )}
