@@ -54,7 +54,7 @@ function MePage() {
                             />
                         </Card>
                         <BrandTabs
-                            leftTitle={'Vibes'}
+                            leftTitle={'All Post'}
                             leftContent={<VibeList vibes={vibes} />}
                             rightTitle={'Media'}
                             rightContent={<MediaCollection vibes={vibes} />}

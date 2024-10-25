@@ -1,13 +1,13 @@
 import { Link as ReactLink, useNavigate } from 'react-router-dom'
 import { Container, Flex, Text, Image, Link as CircleLink } from '@chakra-ui/react'
 import { fontSizing } from '@/styles/style'
-import { LoginDataType } from '@/types/types'
+import { LoginDataType, UserType } from '@/types/types'
 import { setLoggedUser } from '@/features/auth/authSlice'
 import { useDispatch } from 'react-redux'
 
 import useCircleToast from '@/hooks/useCircleToast'
 import LoginInput from '@/components/inputs/LoginInput'
-import fakeData from '@/data/user.json' // Adjust the path as necessary
+import API from '@/networks/api'
 
 function LoginPage() {
     const dispatch = useDispatch()
@@ -23,23 +23,18 @@ function LoginPage() {
     }
 
     async function loginHandler(data: LoginDataType) {
-        // Find user in fake data
-        const user = fakeData.fakeUsers.find(
-            (user) => user.username === data.username
-        );
+        const token: string | undefined = await API.LOGIN(data)
 
-        if (user) {
-            dispatch(setLoggedUser(user)); // Dispatch the user info
+        if (token) {
+            const loggedUser: UserType = await API.GET_LOGGED_USER()
+            dispatch(setLoggedUser(loggedUser))
 
-            navigate('/'); // Navigate to home after successful login
-        } else {
-            // Handle login failure
-            return Promise.reject("Invalid username or password");
+            navigate('/')
         }
     }
 
     return (
-        <Container height={'100vh'} width={'400px'} alignContent={"center"}>
+        <Container height={'100vh'} width={'400px'}>
             <Flex direction={'column'} gap={'1rem'}>
                 <Image src={'/circle.png'} width={'35%'} mt={'3rem'} />
                 <Text fontSize={fontSizing.bigger} fontWeight={'600'} mt={'-.75rem'}>
@@ -51,7 +46,7 @@ function LoginPage() {
                     <CircleLink
                         as={ReactLink}
                         to={'/register'}
-                        color={'circle.accent'}
+                        color={'teal'}
                         ml={'.25rem'}
                     >
                         Create one.

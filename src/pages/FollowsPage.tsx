@@ -6,8 +6,7 @@ import { UserType } from '@/types/types'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 
-// Mengimpor data palsu
-import fakeData from '@/data/user.json' // Pastikan path ini benar
+import API from '@/networks/api'
 import MainBar from '@/components/bars/MainBar'
 import SideBar from '@/components/bars/SideBar'
 import SuggestionCard from '@/components/cards/SuggestionCard'
@@ -28,9 +27,7 @@ function FollowsPage() {
     useEffect(() => {
         async function getUsers() {
             setLoading(true)
-
-            // Mengambil pengguna dari fakeData
-            const users: UserType[] = fakeData.fakeUsers // Mengakses fakeUsers dari data palsu
+            const users: UserType[] = await API.GET_ALL_USERS()
 
             if (loggedUser) {
                 setFollowers(() => {

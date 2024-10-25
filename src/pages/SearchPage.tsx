@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 import { UserType } from '@/types/types'
 
-import fakeData from '@/data/user.json' // Import fake data here
+import API from '@/networks/api'
 import MainBar from '@/components/bars/MainBar'
 import SideBar from '@/components/bars/SideBar'
 import ProfileCard from '@/components/cards/ProfileCard'
@@ -25,12 +25,15 @@ function SearchPage() {
     const [searchKeyword, setSearchKeyword] = useState<string>('')
     const [isLoading, setLoading] = useState<boolean>(false)
 
-    const debounced = useDebouncedCallback((keyword) => {
-        const filteredResults = fakeData.fakeUsers.filter(user => 
-            user.username.includes(keyword) || user.name.includes(keyword)
-        );
-        setSearchResult(filteredResults);
-        setLoading(false);
+    const debounced = useDebouncedCallback(async (searchKeyword) => {
+        try {
+            const searchResult = await API.FIND_USERS(searchKeyword)
+            setSearchResult(searchResult)
+        } catch (error) {
+            throw new Error()
+        } finally {
+            setLoading(false)
+        }
     }, 500)
 
     watch((data) => {
@@ -38,11 +41,7 @@ function SearchPage() {
         setSearchResult([])
         setSearchKeyword(data.search)
 
-        if (data.search) {
-            debounced(data.search)
-        } else {
-            setLoading(false);
-        }
+        debounced(data.search)
     })
 
     if (!searchKeyword) {
@@ -61,8 +60,8 @@ function SearchPage() {
                             register={register}
                         />
                         <EmptyMessage
-                            header={'Find someone ?'}
-                            body={"I hope you always have a nice day!!."}
+                            header={'Need to stalk someone?'}
+                            body={"Chill! I'll keep your secret."}
                         />
                     </MainBar>
                 </GridItem>
@@ -110,8 +109,8 @@ function SearchPage() {
                             </Box>
                         ) : (
                             <EmptyMessage
-                                header={`Mmm, we can't find "${searchKeyword}".`}
-                                body={"Are you sure there's no typo?"}
+                                header={`No result for "${searchKeyword}".`}
+                                body={"Try searching for something else or check the spelling of wjat you typed"}
                             />
                         )}
                     </Flex>

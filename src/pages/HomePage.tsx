@@ -14,7 +14,6 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 import { useEffect, useState } from 'react'
 import { VibeType } from '@/types/types'
-import fakeData from "@/data/user.json"
 
 function HomePage() {
     const loggedUser = useSelector((states: RootState) => states.loggedUser.value)
@@ -48,11 +47,11 @@ function HomePage() {
                 <MainBar>
                     <NavigationHeading text={'Home'} disabled />
                     <NewVibe
-                        placeholder={"What's on your mind?"}
+                        placeholder={"What is happening?!"}
                         imagePreviewId={'atHome'}
                         onPost={onPost}
                     />
-                    {fakeData.vibes.length ? (
+                    {preparedVibes.length ? (
                         <VibeList vibes={preparedVibes} />
                     ) : (
                         <Box mt={'3rem'}>

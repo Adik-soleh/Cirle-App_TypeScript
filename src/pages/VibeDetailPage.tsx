@@ -23,7 +23,7 @@ function VibeDetailPage() {
             <GridItem colSpan={12}>
                 <MainBar>
                     <Link to={'/'}>
-                        <NavigationHeading icon={<BiLeftArrowAlt />} text={'Vibe'} sticky />
+                        <NavigationHeading icon={<BiLeftArrowAlt />} text={'Status'} sticky />
                     </Link>
                     {vibe ? (
                         <VibeDetail vibe={vibe} onReply={onReply} />
