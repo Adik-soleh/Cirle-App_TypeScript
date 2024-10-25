@@ -1,6 +1,6 @@
 import { UseFormRegister, FieldValues, Path } from 'react-hook-form'
 import { Image, Flex, CardHeader, Box, useDisclosure, Input } from '@chakra-ui/react'
-import { BiImages } from 'react-icons/bi'
+import { RiImageAddFill } from "react-icons/ri";
 import { fontSizing } from '@/styles/style'
 import { useState } from 'react'
 
@@ -98,7 +98,7 @@ function ProfileCardHeader<T extends FieldValues>(props: ProfileCardHeaderProps<
                                 mt={'-3rem'}
                                 _hover={{ opacity: '.7' }}
                             >
-                                <BiImages fontSize={fontSizing.bigger} />
+                                <RiImageAddFill fontSize={fontSizing.bigger} />
                             </Box>
                         </label>
                     </Flex>
@@ -148,7 +148,7 @@ function ProfileCardHeader<T extends FieldValues>(props: ProfileCardHeaderProps<
                             borderRadius={'full'}
                             _hover={{ opacity: '.7' }}
                         >
-                            <BiImages fontSize={fontSizing.bigger} />
+                            <RiImageAddFill fontSize={fontSizing.bigger} />
                         </Box>
                     </label>
                 </Flex>

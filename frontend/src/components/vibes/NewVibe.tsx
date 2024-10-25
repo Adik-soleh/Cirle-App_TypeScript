@@ -1,5 +1,5 @@
 import { Avatar, Flex, Spacer, Box, Divider, Input, FormControl } from '@chakra-ui/react'
-import { BiImageAdd } from 'react-icons/bi'
+import { RiImageAddFill } from "react-icons/ri";
 import { useForm } from 'react-hook-form'
 import { VibeDataType } from '@/types/types'
 import { VibeSchema } from '@/validators/validator'
@@ -76,7 +76,7 @@ function NewVibe(props: NewVibeProps) {
                             onChange={(e) => onImageChange(e)}
                         />
                         <label htmlFor={imagePreviewId}>
-                            <BiImageAdd fontSize={'2rem'} />
+                            <RiImageAddFill fontSize={'2rem'} />
                         </label>
                     </FormControl>
                     <Box width={'15%'}>

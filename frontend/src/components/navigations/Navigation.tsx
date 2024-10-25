@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { Flex, Spacer, Image, Box, useDisclosure } from '@chakra-ui/react'
-import { BiSolidHome, BiSearchAlt, BiHeart, BiUser, BiLogOut } from 'react-icons/bi'
+import { BiSolidHome, BiSearchAlt, BiHeart, BiUser } from 'react-icons/bi'
+import { CgLogOut } from "react-icons/cg";
 import { useDispatch } from 'react-redux'
 import { unsetLoggedUser } from '@/features/auth/authSlice'
 import API from '@/networks/api'
@@ -51,7 +52,7 @@ function Navigation() {
             <SolidButton onClick={onOpen} text={'Create Post'} py={'1.5rem'} />
             <Spacer />
 
-            <NavigationItem icon={<BiLogOut />} text={'Logout'} onLogout={onLogout} />
+            <NavigationItem icon={<CgLogOut />} text={'Logout'} onLogout={onLogout} />
             <BrandModal isOpen={isOpen} onClose={onClose} size={'xl'}>
                 <Box pt={'.5rem'}>
                     <NewVibe
