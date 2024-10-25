@@ -15,7 +15,7 @@ function EmptyMessage({ header, body }: EmptyMessageProps) {
                 </Text>
             )}
             {body && (
-                <Text fontSize={fontSizing.normal} color={'circle.dark'}>
+                <Text fontSize={fontSizing.normal} color={'circle.dark'} textAlign={"center"}>
                     {body}
                 </Text>
             )}

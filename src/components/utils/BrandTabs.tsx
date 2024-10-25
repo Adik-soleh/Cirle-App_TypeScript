@@ -23,7 +23,7 @@ function BrandTabs({ leftTitle, leftContent, rightTitle, rightContent }: BrandTa
             <TabIndicator
                 mt={'-1.5px'}
                 height={'1.5px'}
-                bg={'circle.accent'}
+                bg={'teal'}
                 borderRadius={'1px'}
             />
             <TabPanels>

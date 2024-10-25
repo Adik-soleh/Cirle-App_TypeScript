@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { Flex, Spacer, Image, Box, useDisclosure } from '@chakra-ui/react'
-import { BiHomeAlt, BiSearchAlt2, BiHeart, BiSolidUserDetail, BiLogOut } from 'react-icons/bi'
+import { BiSolidHome, BiSearchAlt, BiHeart, BiUser, BiLogOut } from 'react-icons/bi'
 import { useDispatch } from 'react-redux'
 import { unsetLoggedUser } from '@/features/auth/authSlice'
 import API from '@/networks/api'
@@ -35,18 +35,18 @@ function Navigation() {
             pos={'fixed'}
             w={'266px'}
         >
-            <Image src={'/circle.png'} objectFit={'cover'} width={'60%'} mb={'1rem'} />
+            <Image src={'/circle.png'} objectFit={'cover'} width={'80%'} mb={'1rem'} />
             <Link to={'/'}>
-                <NavigationItem icon={<BiHomeAlt />} text={'Home'} />
+                <NavigationItem icon={<BiSolidHome />} text={'Home'} />
             </Link>
             <Link to={'/search'}>
-                <NavigationItem icon={<BiSearchAlt2 />} text={'Search'} />
+                <NavigationItem icon={<BiSearchAlt />} text={'Search'} />
             </Link>
             <Link to={'/follows'}>
                 <NavigationItem icon={<BiHeart />} text={'Follows'} />
             </Link>
             <Link to={'/me'}>
-                <NavigationItem icon={<BiSolidUserDetail />} text={'Profile'} />
+                <NavigationItem icon={<BiUser />} text={'Profile'} />
             </Link>
             <SolidButton onClick={onOpen} text={'Create Post'} py={'1.5rem'} />
             <Spacer />
@@ -55,7 +55,7 @@ function Navigation() {
             <BrandModal isOpen={isOpen} onClose={onClose} size={'xl'}>
                 <Box pt={'.5rem'}>
                     <NewVibe
-                        placeholder={"What's on your mind?"}
+                        placeholder={"What is happening?!"}
                         imagePreviewId={'atModal'}
                         onPost={onPost}
                     />

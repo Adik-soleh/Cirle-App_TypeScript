@@ -15,7 +15,7 @@ function NavigationHeading({ icon, text, disabled, sticky }: NavigationHeadingPr
     if (disabled) {
         return (
             <Box px={'1rem'} pt={'2rem'} pb={'1rem'}>
-                <Heading  fontSize={fontSizing.biggest}>{text}</Heading>
+                <Heading fontSize={fontSizing.bigger}>{text}</Heading>
             </Box>
         )
     }
