@@ -41,7 +41,7 @@ function VibeDetail({ vibe, onReply, noImage }: VibeDetailProps) {
             <Box>
                 <VibeItem vibe={rest} noImage={noImage && noImage} repliesTarget />
                 <NewVibe
-                    placeholder={'Post your reply'}
+                    placeholder={'Type your reply!'}
                     onPost={onReply}
                     imagePreviewId={'atDetail'}
                     buttonText={'Reply'}
@@ -57,7 +57,7 @@ function VibeDetail({ vibe, onReply, noImage }: VibeDetailProps) {
         <Box>
             <VibeItem vibe={rest} noImage={noImage && noImage} isReply />
             <NewVibe
-                placeholder={'Post your reply'}
+                placeholder={'Type your reply!'}
                 onPost={onReply}
                 imagePreviewId={'atDetail'}
                 buttonText={'Reply'}

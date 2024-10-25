@@ -40,7 +40,7 @@ function VibeItemHeader({
     const [, , onDeleteReply] = useReplies()
 
     function onProfileClick() {
-        navigate(`/user/${authorId}`)
+        navigate(`/users/${authorId}`)
     }
 
     return (

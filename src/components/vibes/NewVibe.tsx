@@ -58,8 +58,7 @@ function NewVibe(props: NewVibeProps) {
                 <Flex
                     alignItems={'center'}
                     gap={'1rem'}
-                    // color={'circle.accent'}
-                    color={'whitesmoke'}
+                    color={'circle.accent'}
                     mb={'1rem'}
                     mr={'1rem'}
                 >
