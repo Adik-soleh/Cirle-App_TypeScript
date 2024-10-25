@@ -352,37 +352,37 @@ class API {
         }
     }
 
-    DETECT_SENTIMENT = async (content: string): Promise<string[]> => {
-        try {
-            const response = await axios.post(
-                CONFIGS.OPENAI_BASE_URL,
-                {
-                    input: content,
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${CONFIGS.OPENAI_API_KEY}`,
-                    },
-                }
-            )
+    // DETECT_SENTIMENT = async (content: string): Promise<string[]> => {
+    //     try {
+    //         const response = await axios.post(
+    //             CONFIGS.OPENAI_BASE_URL,
+    //             {
+    //                 input: content,
+    //             },
+    //             {
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                     Authorization: `Bearer ${CONFIGS.OPENAI_API_KEY}`,
+    //                 },
+    //             }
+    //         )
 
-            const categories = response.data.results[0].categories
+    //         const categories = response.data.results[0].categories
 
-            const labels = []
-            for (const cat in categories) {
-                if (categories[cat] === true) labels.push(cat)
-            }
+    //         const labels = []
+    //         for (const cat in categories) {
+    //             if (categories[cat] === true) labels.push(cat)
+    //         }
 
-            return labels
-        } catch (error) {
-            if (axios.isAxiosError(error)) {
-                throw error
-            }
+    //         return labels
+    //     } catch (error) {
+    //         if (axios.isAxiosError(error)) {
+    //             throw error
+    //         }
 
-            throw error
-        }
-    }
+    //         throw error
+    //     }
+    // }
 
     SET_TOKEN(payload: string): void {
         localStorage.setItem('token', payload)
