@@ -5,7 +5,6 @@ import { UserType } from '@/types/types'
 import { useDispatch } from 'react-redux'
 import { setLoggedUser } from '@/features/auth/authSlice'
 
-import fakeUsers from '@/data/user.json' // Import the user data from JSON
 import API from '@/networks/api'
 import HollowButton from '@/components/buttons/HollowButton'
 import CircleSpinner from '@/components/utils/CircleSpinner'
@@ -27,14 +26,11 @@ function AccountCard({ id, username, name, bio, avatar, isFollowed, noBio }: Acc
 
     const dispatch = useDispatch()
 
-    // Get the user data from the imported JSON based on the ID
-    const user = fakeUsers.fakeUsers.find((user) => user.id === id)
-
     async function onFollow() {
         try {
             setLoading(true)
 
-            if (!isUserFollowed) {
+            if (!isFollowed) {
                 await API.FOLLOW_USER(id)
                 return setUserFollowed(true)
             }
@@ -57,7 +53,7 @@ function AccountCard({ id, username, name, bio, avatar, isFollowed, noBio }: Acc
     return (
         <Flex gap={'1rem'} alignItems={'center'}>
             <Link to={`/user/${id}`}>
-                <Avatar src={user?.avatar || avatar} _hover={{ opacity: '.8', transition: 'opacity .3s ease' }} />
+                <Avatar src={avatar} _hover={{ opacity: '.8', transition: 'opacity .3s ease' }} />
             </Link>
             <Flex direction={'column'} justifyContent={'center'} gap={0} mr={'auto'}>
                 <Link to={`/user/${id}`}>
@@ -66,17 +62,17 @@ function AccountCard({ id, username, name, bio, avatar, isFollowed, noBio }: Acc
                         fontWeight={'700'}
                         _hover={{ opacity: '.8', transition: 'opacity .3s ease' }}
                     >
-                        {user?.name || name}
+                        {name}
                     </Text>
                     <Text
                         fontSize={fontSizing.smaller}
                         color={'circle.dark'}
                         _hover={{ opacity: '.8', transition: 'opacity .3s ease' }}
                     >
-                        @{user?.username || username}
+                        @{username}
                     </Text>
                 </Link>
-                {(user?.bio || bio) && !noBio && <Text fontSize={fontSizing.smaller}>{user?.bio || bio}</Text>}
+                {bio && !noBio && <Text fontSize={fontSizing.smaller}>{bio}</Text>}
             </Flex>
             {isLoading ? (
                 <HollowButton children={<CircleSpinner />} />

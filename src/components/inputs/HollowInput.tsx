@@ -14,7 +14,7 @@ function HollowInput({ type, placeholder, value }: HollowInputProps) {
             variant={'flushed'}
             px={'1rem'}
             border={'1px'}
-            borderColor={'circle.dark'}
+            borderColor={'teal'}
             borderRadius={'lg'}
             placeholder={placeholder}
             value={value}

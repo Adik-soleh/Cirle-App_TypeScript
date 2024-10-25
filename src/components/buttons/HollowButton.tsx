@@ -13,10 +13,10 @@ function HollowButton({ onClick, text, dark, children }: HollowButtonProps) {
     return (
         <Button
             onClick={onClick}
-            minWidth={'50px'}
-            variant={'variant'}
-            borderRadius={'9'}
-            border={'1px'}
+            minWidth={'115px'}
+            variant={'outline'}
+            borderRadius={'2xl'}
+            border={'2px'}
             px={'1.25rem'}
             fontSize={fontSizing.small}
             borderColor={dark ? 'circle.dark' : 'circle.font'}

@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 import { UserType } from '@/types/types'
-import { Collapse, Flex } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { useState } from 'react'
-import { BiSolidChevronDown, BiSolidChevronUp } from 'react-icons/bi'
 
 import BrandCard from './BrandCard'
 import ProfileCardHeader from './ProfileCardHeader'
@@ -14,7 +13,7 @@ import CircleSpinner from '@/components/utils/CircleSpinner'
 import GhostButton from '@/components/buttons/GhostButton'
 
 function ProfileCard() {
-    const [hideProfile, setHideProfile] = useState(false)
+    const [, setHideProfile] = useState(false)
     const loggedUser: UserType | undefined = useSelector(
         (states: RootState) => states.loggedUser.value
     )
@@ -35,7 +34,7 @@ function ProfileCard() {
                         color={'circle.font'}
                         w={'100%'}
                     >
-                        {/* <BrandHeading text={name} mb={0} /> */}
+                        <BrandHeading text={"My Profile"} mb={0} />
                         {/* {hideProfile ? (
                             <BiSolidChevronUp fill={'#ffffff'} size={'1.5rem'} />
                         ) : (
@@ -49,7 +48,7 @@ function ProfileCard() {
                         avatar={avatar}
                         banner={banner}
                     />
-                    <ProfileCardBody username={username} name={`${name}💫`} bio={bio} />
+                    <ProfileCardBody username={username} name={name} bio={bio} />
                     <ProfileCardFooter
                         totalFollower={totalFollower}
                         totalFollowing={totalFollowing}

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 
-import fakeData from '@/data/user.json' // Import fake data here
+import API from '@/networks/api'
 import AccountCard from './AccountCard'
 import BrandCard from './BrandCard'
 import BrandHeading from '@/components/utils/BrandHeading'
@@ -17,20 +17,20 @@ function SuggestionCard() {
     )
 
     useEffect(() => {
-        const getUsers = () => {
-            if (loggedUser) {
-                // Filter out users who are followed and the logged-in user
-                const filteredUsers = fakeData.fakeUsers.filter(user => 
-                    !user.isFollowed && user.id !== loggedUser.id
-                );
+        async function getUsers() {
+            const rawUsers: UserType[] = await API.GET_ALL_USERS()
 
-                // Randomly select 3 users
-                const randomUsers = filteredUsers.sort(() => Math.random() - 0.5).slice(0, 3);
-                setUsers(randomUsers);
+            if (loggedUser) {
+                const users = rawUsers.filter((user) => {
+                    return !user.isFollowed && user.id !== loggedUser.id
+                })
+
+                const randomUsers = users.sort(() => Math.random() - 0.5).splice(0, 3)
+                setUsers(randomUsers)
             }
         }
 
-        getUsers();
+        getUsers()
     }, [loggedUser])
 
     if (users.length) {
@@ -57,7 +57,7 @@ function SuggestionCard() {
 
     return (
         <BrandCard>
-            <BrandHeading text={'Suggested accounts'} />
+            <BrandHeading text={'Suggested for you'} />
             <CircleSpinner />
         </BrandCard>
     )

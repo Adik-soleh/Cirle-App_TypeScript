@@ -21,7 +21,7 @@ function SolidInput<T extends FieldValues>(props: SolidInputProps<T>) {
                 type={type}
                 variant={'filled'}
                 px={'1rem'}
-                bg={'circle.darker'}
+                bg={'teal'}
                 borderRadius={'lg'}
                 placeholder={placeholder}
                 value={value}

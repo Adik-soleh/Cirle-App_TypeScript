@@ -1,5 +1,5 @@
 import { UseFormRegister, FieldValues, Path } from 'react-hook-form'
-import { Image, Flex, CardHeader, Box, useDisclosure, Input , Button} from '@chakra-ui/react'
+import { Image, Flex, CardHeader, Box, useDisclosure, Input } from '@chakra-ui/react'
 import { BiImages } from 'react-icons/bi'
 import { fontSizing } from '@/styles/style'
 import { useState } from 'react'
@@ -107,7 +107,7 @@ function ProfileCardHeader<T extends FieldValues>(props: ProfileCardHeaderProps<
             {isUserProfile && <Box boxSize={'40px'} />}
             {!editable && !isUserProfile && (
                 <Box ml={'auto'} zIndex={1}>
-                    <Button onClick={onOpen}>Edit Profile</Button>
+                    <HollowButton onClick={onOpen} text={buttonText} />
                 </Box>
             )}
             <Flex pos={'absolute'} left={'5%'} bottom={'0'}>
