@@ -1,7 +1,7 @@
-import { ForgotDataType, RegisterDataType, ResetDataType } from '@/types/types'
+import { ForgotDataType, LoginDataType, RegisterDataType, ResetDataType } from '@/types/types'
 import { z, ZodType } from 'zod'
 
-export const LoginSchema = z.object({
+export const LoginSchema: ZodType<LoginDataType> = z.object({
     username: z
         .string()
         .min(4, {
@@ -12,7 +12,6 @@ export const LoginSchema = z.object({
         message: 'Password must be at least 4 chars long.',
     }),
 })
-export type LoginDataType = z.infer<typeof LoginSchema>;
 
 export const RegisterSchema: ZodType<RegisterDataType> = z.object({
     username: z
