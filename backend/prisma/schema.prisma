@@ -21,7 +21,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   filterContent Boolean   @default(false)
 
-  vibes         Vibe[]    @relation("UserVibes")
+  vibes         Status[]    @relation("UserVibes")
   replies       Reply[]   @relation("UserReplies")
   likes         Like[]    @relation("UserLikes")
   followings    Follow[]  @relation("UserFollowing")
@@ -30,7 +30,7 @@ model User {
   @@map("users")
 }
 
-model Vibe {
+model Status {
   id            Int       @id @default(autoincrement())
   content       String
   image         String?
@@ -57,7 +57,7 @@ model Reply {
 
   repliedBy   User      @relation(fields: [authorId], references: [id], name: "UserReplies", onDelete: Cascade)
   authorId    Int
-  replieDto   Vibe      @relation(fields: [targetId], references: [id], name: "VibeReplies", onDelete: Cascade)
+  replieDto   Status      @relation(fields: [targetId], references: [id], name: "VibeReplies", onDelete: Cascade)
   targetId    Int
 
   @@map("replies")
@@ -70,7 +70,7 @@ model Like {
 
   likedBy     User      @relation(fields: [authorId], references: [id], name: "UserLikes", onDelete: Cascade)
   authorId    Int
-  likedOn     Vibe      @relation(fields: [targetId], references: [id], name: "VibeLikes", onDelete: Cascade)
+  likedOn     Status      @relation(fields: [targetId], references: [id], name: "VibeLikes", onDelete: Cascade)
   targetId    Int
 
   @@map("likes")
