@@ -14,7 +14,7 @@ import NewVibe from '@/components/vibes/NewVibe'
 import { useVibes } from '@/hooks/useVibes'
 import { RootState } from '@/redux';
 import { UserType } from '@/types/types';
-import DarkModeToggle from '@/hooks/useColorMode';
+import DarkModeToggle from '@/DarkMode/useColorMode';
 
 function Navigation() {
     const loggedUser: UserType | undefined = useSelector(
