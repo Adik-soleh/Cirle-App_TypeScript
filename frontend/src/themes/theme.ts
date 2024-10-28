@@ -1,10 +1,11 @@
-import { extendTheme } from '@chakra-ui/react'
-import { inputAnatomy, switchAnatomy } from '@chakra-ui/anatomy'
-import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+import { extendTheme, ThemeConfig } from '@chakra-ui/react';
+import { inputAnatomy, switchAnatomy } from '@chakra-ui/anatomy';
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
+
 const { definePartsStyle: inputStyle, defineMultiStyleConfig: inputConfig } =
-    createMultiStyleConfigHelpers(inputAnatomy.keys)
+    createMultiStyleConfigHelpers(inputAnatomy.keys);
 const { definePartsStyle: switchStyle, defineMultiStyleConfig: switchConfig } =
-    createMultiStyleConfigHelpers(switchAnatomy.keys)
+    createMultiStyleConfigHelpers(switchAnatomy.keys);
 
 const baseStyle = switchStyle({
     container: {},
@@ -17,7 +18,7 @@ const baseStyle = switchStyle({
             bg: 'circle.accent',
         },
     },
-})
+});
 
 const hollow = inputStyle({
     field: {
@@ -47,21 +48,43 @@ const hollow = inputStyle({
             color: 'circle.dark',
         },
     },
-})
+});
 
-const switchTheme = switchConfig({ baseStyle })
+const switchTheme = switchConfig({ baseStyle });
 const inputTheme = inputConfig({
     variants: { hollow },
-})
+});
+
+// Define the config for initial color mode settings
+const config: ThemeConfig = {
+    initialColorMode: 'light', // default to light mode
+    useSystemColorMode: false, // set to true if you want to follow the system preference
+};
 
 const circleTheme = extendTheme({
+    config,
     colors: {
         circle: {
-            backdrop: '#171717',
-            backdropAccent: '#1c1c1c',
-            font: '#dedede',
-            dark: '#505050',
-            darker: '#1f1f1f',
+            backdrop: {
+                light: '#f7f7f7',
+                dark: '#171717',
+            },
+            backdropAccent: {
+                light: '#e0e0e0',
+                dark: '#1c1c1c',
+            },
+            font: {
+                light: '#333',
+                dark: '#dedede',
+            },
+            dark: {
+                light: '#ccc',
+                dark: '#505050',
+            },
+            darker: {
+                light: '#999',
+                dark: '#1f1f1f',
+            },
             red: '#D71913',
             accent: '#006c6c',
             darkAccent: '#029898',
@@ -70,16 +93,16 @@ const circleTheme = extendTheme({
         },
     },
     styles: {
-        global: {
+        global: (props: any) => ({
             body: {
                 fontFamily: 'Inter',
-                color: '#dedede',
-                bg: '#171717',
+                color: props.colorMode === 'dark' ? 'circle.font.dark' : 'circle.font.light',
+                bg: props.colorMode === 'dark' ? 'circle.backdrop.dark' : 'circle.backdrop.light',
                 fontSize: '14.5px',
             },
-        },
+        }),
     },
     components: { Input: inputTheme, Switch: switchTheme },
-})
+});
 
-export default circleTheme
+export default circleTheme;

@@ -21,6 +21,7 @@ import FollowsPage from '@/pages/FollowsPage'
 import SplashScreen from '@/components/utils/SplashScreen'
 import CircleAlert from '@/components/utils/CircleAlert'
 import ProfilePage from '@/pages/ProfilePage'
+import './hooks/DarkMode.css'
 
 function App() {
     const isPreloaded = useSelector((states: RootState) => states.isPreloaded.value)

@@ -14,7 +14,7 @@ function SolidButton({ onClick, text, py }: SolidButtonProps) {
             width={'100%'}
             borderRadius={'2xl'}
             bg={'teal'}
-            color={'circle.font'}
+            color={'black'}
             py={py ? py : undefined}
             _hover={solidButtonHover}
         >

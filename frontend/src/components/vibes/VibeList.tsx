@@ -29,7 +29,7 @@ function VibeList({ vibes, noLink }: VibeListProps) {
         )
     }
 
-    return <EmptyMessage header={'No vibe has been posted at this moment.'} />
+    return <EmptyMessage header={'No status posted now..'} />
 }
 
 export default VibeList

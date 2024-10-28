@@ -91,7 +91,7 @@ function ProfileCardHeader<T extends FieldValues>(props: ProfileCardHeaderProps<
                         />
                         <label htmlFor="atBanner">
                             <Box
-                                bg={'circle.backdrop'}
+                                bg={'red'}
                                 opacity={'.8'}
                                 padding={'1rem'}
                                 borderRadius={'full'}

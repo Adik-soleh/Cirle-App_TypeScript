@@ -19,6 +19,8 @@ function VibeInput<T extends FieldValues>(props: VibeInputProps<T>) {
                 px={0}
                 border={0}
                 bg={'circle.backdrop'}
+                borderRadius={'20'}
+                padding={3}
                 minHeight={'100px'}
                 resize={'none'}
                 placeholder={placeholder}

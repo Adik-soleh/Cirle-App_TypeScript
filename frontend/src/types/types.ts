@@ -102,3 +102,14 @@ export interface VibeDataType {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     image: any
 }
+
+export enum IThemeMode {
+    LIGHT = "light",
+    DARK = "dark",
+    SYSTEM = "system",
+}
+
+export interface IThemeContext {
+    themeMode: IThemeMode;
+    switchThemeMode: (mode: IThemeMode) => void;
+}

@@ -27,7 +27,7 @@ function AccountListCard({ accounts }: AccountListCardProps) {
         )
     }
 
-    return <EmptyMessage header={'Nothing to see here yet.'} />
+    return <EmptyMessage header={'Sorry, there are no users available yet.'} />
 }
 
 export default AccountListCard

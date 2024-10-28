@@ -1,4 +1,4 @@
-import { Card, Box, Flex, Divider, FormControl, FormLabel, Switch } from '@chakra-ui/react'
+import { Card, Box, Flex, Divider, FormControl, FormLabel, Switch, useColorMode } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
@@ -17,9 +17,11 @@ interface EditProfileModalProps {
     onClose: () => void
     avatar: string
     banner: string
+    dark: boolean
 }
 
-function EditProfileModal({ avatar, banner, onClose }: EditProfileModalProps) {
+function EditProfileModal({ avatar, banner, dark, onClose }: EditProfileModalProps) {
+    const { colorMode } = useColorMode();
     const loggedUser = useSelector((states: RootState) => states.loggedUser.value)
 
     const [onEdit] = useEditUser({ onClose })
@@ -40,9 +42,17 @@ function EditProfileModal({ avatar, banner, onClose }: EditProfileModalProps) {
         },
     })
 
+
+    const bg = dark
+    ? colorMode === 'dark'
+        ? 'circle.backdrop.dark'
+        : 'circle.backdrop.light'
+    : colorMode === 'dark'
+        ? 'circle.darker.dark'
+        : 'white';
     return (
         <Box py={'2rem'}>
-            <Card bg={'circle.backdrop'} px={'1rem'} color={'circle.font'} mb={'1.5rem'}>
+            <Card bg={bg} px={'1rem'} color={'circle.font'} mb={'1.5rem'}>
                 <BrandHeading text={'Edit Profile'} />
                 <ProfileCardHeader
                     avatar={avatar}

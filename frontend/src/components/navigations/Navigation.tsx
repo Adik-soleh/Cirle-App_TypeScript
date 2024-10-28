@@ -1,18 +1,25 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { Flex, Spacer, Image, Box, useDisclosure } from '@chakra-ui/react'
+import { Flex, Spacer, Image, Box, useDisclosure, Avatar } from '@chakra-ui/react'
 import { BiSolidHome, BiSearchAlt, BiHeart, BiUser } from 'react-icons/bi'
 import { CgLogOut } from "react-icons/cg";
-import { useDispatch } from 'react-redux'
+
+import { useDispatch, useSelector } from 'react-redux'
 import { unsetLoggedUser } from '@/features/auth/authSlice'
 import API from '@/networks/api'
 
-import NavigationItem from './NavigationItem'
+import NavigationItem, { LogoutItem } from './NavigationItem'
 import SolidButton from '@/components/buttons/SolidButton'
 import BrandModal from '@/components/modals/BrandModal'
 import NewVibe from '@/components/vibes/NewVibe'
 import { useVibes } from '@/hooks/useVibes'
+import { RootState } from '@/redux';
+import { UserType } from '@/types/types';
+import DarkModeToggle from '@/hooks/useColorMode';
 
 function Navigation() {
+    const loggedUser: UserType | undefined = useSelector(
+        (states: RootState) => states.loggedUser.value
+    )
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [, onPost] = useVibes({ onClose })
 
@@ -26,6 +33,7 @@ function Navigation() {
         navigate('/')
     }
 
+
     return (
         <Flex
             as={'nav'}
@@ -35,7 +43,8 @@ function Navigation() {
             height={'90vh'}
             pos={'fixed'}
             w={'266px'}
-        >
+            >
+            <DarkModeToggle/>
             <Image src={'/circle.png'} objectFit={'cover'} width={'80%'} mb={'1rem'} />
             <Link to={'/'}>
                 <NavigationItem icon={<BiSolidHome />} text={'Home'} />
@@ -52,7 +61,7 @@ function Navigation() {
             <SolidButton onClick={onOpen} text={'Create Post'} py={'1.5rem'} />
             <Spacer />
 
-            <NavigationItem icon={<CgLogOut />} text={'Logout'} onLogout={onLogout} />
+            <LogoutItem icon={<CgLogOut />} text={loggedUser?.name} onLogout={onLogout} avatar={<Avatar sx={{width: 10, height: 10}} src={loggedUser?.avatar}/>} />
             <BrandModal isOpen={isOpen} onClose={onClose} size={'xl'}>
                 <Box pt={'.5rem'}>
                     <NewVibe

@@ -1,7 +1,7 @@
 import { CardHeader, Menu, MenuButton, MenuItem, MenuList, Spacer, Text } from '@chakra-ui/react'
 import { fontSizing } from '@/styles/style'
 import { dateFormatter } from '@/utils/dateFormatter'
-import { BiDotsVerticalRounded } from 'react-icons/bi'
+import { BiDotsHorizontalRounded } from 'react-icons/bi'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 import { UserType } from '@/types/types'
@@ -67,12 +67,12 @@ function VibeItemHeader({
                     <MenuButton
                         as={VibeItemButton}
                         color={'circle.dark'}
-                        icon={<BiDotsVerticalRounded fontSize={'1.5rem'} />}
+                        icon={<BiDotsHorizontalRounded fontSize={'1.5rem'} />}
                         hoverColor={'circle.accent'}
                         ml={'.5rem'}
                         atLeft
                     ></MenuButton>
-                    <MenuList bg={'circle.darker'} border={0}>
+                    <MenuList bg={'circle.'} border={0}>
                         <MenuItem
                             bg={'circle.darker'}
                             onClick={(e) => {

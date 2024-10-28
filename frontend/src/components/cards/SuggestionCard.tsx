@@ -58,7 +58,7 @@ function SuggestionCard() {
     return (
         <BrandCard>
             <BrandHeading text={'Suggested for you'} />
-            <CircleSpinner />
+            {/* <CircleSpinner /> */}
         </BrandCard>
     )
 }

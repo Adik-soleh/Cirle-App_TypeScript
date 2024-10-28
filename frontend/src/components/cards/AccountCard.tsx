@@ -77,7 +77,7 @@ function AccountCard({ id, username, name, bio, avatar, isFollowed, noBio }: Acc
             {isLoading ? (
                 <HollowButton children={<CircleSpinner />} />
             ) : isUserFollowed ? (
-                <HollowButton text={'Following'} onClick={onFollow} dark />
+                <HollowButton text={'Follxowing'} onClick={onFollow} dark />
             ) : (
                 <HollowButton text={'Follow'} onClick={onFollow} />
             )}

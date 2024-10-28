@@ -14,6 +14,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 import { useEffect, useState } from 'react'
 import { VibeType } from '@/types/types'
+import EmptyMessage from '@/components/utils/EmptyMessage'
 
 function HomePage() {
     const loggedUser = useSelector((states: RootState) => states.loggedUser.value)
@@ -55,7 +56,8 @@ function HomePage() {
                         <VibeList vibes={preparedVibes} />
                     ) : (
                         <Box mt={'3rem'}>
-                            <CircleSpinner />
+                            <EmptyMessage header={'No status posted now..'} />
+                            {/* <CircleSpinner /> */}
                         </Box>
                     )}
                 </MainBar>

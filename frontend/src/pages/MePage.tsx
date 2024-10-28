@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Grid, GridItem, Card } from '@chakra-ui/react'
+import { Grid, GridItem, Card, useColorMode } from '@chakra-ui/react'
 import { BiLeftArrowAlt } from 'react-icons/bi'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
@@ -17,12 +17,26 @@ import VibeList from '@/components/vibes/VibeList'
 import MediaCollection from '@/components/utils/MediaCollection'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 
-function MePage() {
+
+interface MePageProps {
+    dark?: boolean;
+}
+
+function MePage({dark}: MePageProps) {
+    const { colorMode } = useColorMode();
     const loggedUser = useSelector((states: RootState) => states.loggedUser.value)
 
     if (loggedUser) {
         const { username, name, bio, avatar, banner, totalFollower, totalFollowing, vibes } =
             loggedUser
+
+            const bg = dark
+     ? colorMode === 'dark'
+         ? 'circle.backdrop.dark'
+         : 'circle.backdrop.light'
+     : colorMode === 'dark'
+         ? 'circle.darker.dark'
+         : 'white';
 
         return (
             <Grid templateColumns={'repeat(19, 1fr)'}>
@@ -32,7 +46,7 @@ function MePage() {
                             <NavigationHeading icon={<BiLeftArrowAlt />} text={name} sticky />
                         </Link>
                         <Card
-                            bg={'circle.backdrop'}
+                            bg={bg}
                             px={'1rem'}
                             color={'circle.font'}
                             mb={'1.5rem'}
@@ -70,6 +84,8 @@ function MePage() {
             </Grid>
         )
     }
+
+     // Determine the background based on the `dark` prop and the current color mode
 
     return (
         <Grid templateColumns={'repeat(19, 1fr)'} height={'100vh'}>

@@ -1,5 +1,5 @@
 import { Link, Params, useNavigate, useParams } from 'react-router-dom'
-import { Grid, GridItem, Card } from '@chakra-ui/react'
+import { Grid, GridItem, Card, useColorMode } from '@chakra-ui/react'
 import { BiLeftArrowAlt } from 'react-icons/bi'
 import { UserType } from '@/types/types'
 import { useEffect, useState } from 'react'
@@ -20,7 +20,12 @@ import MediaCollection from '@/components/utils/MediaCollection'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 import API from '@/networks/api'
 
-function ProfilePage() {
+interface ProfilePageProps {
+    dark?: boolean
+}
+
+function ProfilePage({dark}: ProfilePageProps) {
+    const { colorMode } = useColorMode();
     const loggedUser = useSelector((states: RootState) => states.loggedUser.value)
 
     const { id }: Readonly<Params<string>> = useParams()
@@ -60,6 +65,14 @@ function ProfilePage() {
             vibes,
         } = user
 
+        const bg = dark
+        ? colorMode === 'dark'
+            ? 'circle.backdrop.dark'
+            : 'circle.backdrop.light'
+        : colorMode === 'dark'
+            ? 'circle.darker.dark'
+            : 'white';
+
         return (
             <Grid templateColumns={'repeat(19, 1fr)'}>
                 <GridItem colSpan={12}>
@@ -68,7 +81,7 @@ function ProfilePage() {
                             <NavigationHeading icon={<BiLeftArrowAlt />} text={name} sticky />
                         </Link>
                         <Card
-                            bg={'circle.backdrop'}
+                            bg={bg}
                             px={'1rem'}
                             color={'circle.font'}
                             mb={'1.5rem'}
