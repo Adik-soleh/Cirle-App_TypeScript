@@ -17,37 +17,37 @@ import Redis from "./middlewares/prisma";
 const prisma = new PrismaClient();
 
 const app = express();
-const router = express.Router();
+const v1 = express.Router();
 const port = PORT;
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/api", router);
+app.use("/api/v1", v1);
 
-// router.use("/", swaggerUI.serve);
+// v1.use("/", swaggerUI.serve);
 
 async function main() {
-  router.post("/register", AuthControllers.register);
-  router.post("/login", AuthControllers.login);
-  router.patch("/auth/reset", authenticate, AuthControllers.resetPassword);
+  v1.post("/register", AuthControllers.register);
+  v1.post("/login", AuthControllers.login);
+  v1.patch("/auth/reset", authenticate, AuthControllers.resetPassword);
 
-  router.get("/vibes", authenticate, Redis.getVibes, VibeControllers.getVibes);
-  router.get("/vibes/:id", authenticate, VibeControllers.getVibe);
-  router.get("/vibes/user/:id", authenticate, VibeControllers.getUserVibes);
-  router.post("/vibes",uploader.single("image"),authenticate,VibeControllers.postVibes);
-  router.delete("/vibes/:id", authenticate, VibeControllers.deleteVibe);
+  v1.get("/vibes", authenticate, Redis.getVibes, VibeControllers.getVibes);
+  v1.get("/vibes/:id", authenticate, VibeControllers.getVibe);
+  v1.get("/vibes/user/:id", authenticate, VibeControllers.getUserVibes);
+  v1.post("/vibes",uploader.single("image"),authenticate,VibeControllers.postVibes);
+  v1.delete("/vibes/:id", authenticate, VibeControllers.deleteVibe);
 
-  router.get("/follow/:id", authenticate, FollowControllers.follow);
-  router.get("/unfollow/:id", authenticate, FollowControllers.unfollow);
+  v1.get("/follow/:id", authenticate, FollowControllers.follow);
+  v1.get("/unfollow/:id", authenticate, FollowControllers.unfollow);
 
-  router.get("/find", authenticate, UserControllers.searchUser);
-  router.post("/likes", authenticate, LikeControllers.likeMechanism);
-  router.get("/me", authenticate, UserControllers.getLoggedUser);
+  v1.get("/find", authenticate, UserControllers.searchUser);
+  v1.post("/likes", authenticate, LikeControllers.likeMechanism);
+  v1.get("/me", authenticate, UserControllers.getLoggedUser);
 
-  router.get("/users/:id", authenticate, UserControllers.getUser);
-  router.get("/users", authenticate, UserControllers.getUsers);
-  router.patch(
+  v1.get("/users/:id", authenticate, UserControllers.getUser);
+  v1.get("/users", authenticate, UserControllers.getUsers);
+  v1.patch(
     "/users/me",
     uploader.fields([
       { name: "avatar", maxCount: 1 },
@@ -57,8 +57,8 @@ async function main() {
     UserControllers.editUser
   );
 
-  router.delete("/replies/:id", authenticate, CommentsController.deleteComment);
-  router.post(
+  v1.delete("/replies/:id", authenticate, CommentsController.deleteComment);
+  v1.post(
     "/replies",
     uploader.single("image"),
     authenticate,

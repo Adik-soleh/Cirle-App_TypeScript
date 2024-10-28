@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { VibeWithDetailType } from '../types/types';
 import { prisma } from '../libs/prisma';
-import ResponseDto from '../Dtos/ResponseDto';
+import ResponseDto from '../dtos/ResponseDto';
 
 class Redis {
     async getVibes(req: Request, res: Response, next: NextFunction) {

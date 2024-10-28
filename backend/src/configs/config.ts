@@ -3,9 +3,9 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 cloudinary.config({
-    cloud_name: 'dlpq5dj0j',
-    api_key: '317522293588931',
-    api_secret: 'tDd__08nt-YvGzM52tGwTufKQ5Q',
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key:  process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
 })
 
 export const DATABASE_URL = process.env.DATABASE_URL
