@@ -25,10 +25,12 @@ class API {
             })
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                throw error
+                console.log(error.response?.data);
+                throw error.message
             }
 
             throw error
+            
         }
     }
 

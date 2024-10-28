@@ -7,7 +7,7 @@ import AuthServices from '../services/AuthServices'
 class AuthControllers {
     async register(req: Request, res: Response) {
         const avatar =
-            'https://api.dicebear.com/8.x/thumbs/svg?seed=Lucy&backgroundColor=f1f4dc&translateX=-5&shapeColor=f1f4dc'
+            'https://api.dicebear.com/9.x/lorelei/svg?flip=false'
         const banner =
             'https://api.dicebear.com/9.x/thumbs/svg?seed=Bandit&backgroundColor=f1f4dc&eyesColor=transparent&mouthColor=transparent'
         const { username, email, name, password, bio } = req.body
