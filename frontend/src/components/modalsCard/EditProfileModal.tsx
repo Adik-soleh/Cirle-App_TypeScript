@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { EditUserSchema } from '@/validators/validator'
 import { EditUserDataType } from '@/types/types'
 
-import ProfileCardHeader from '@/components/cards/ProfileCardHeader'
+import ProfileCardHeader from '@/components/rightPanel/ProfileCardHeader'
 import BrandHeading from '@/components/utils/BrandHeading'
 import SolidButton from '@/components/buttons/SolidButton'
 import SolidInput from '@/components/inputs/SolidInput'

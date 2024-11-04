@@ -1,5 +1,5 @@
-import { CardFooter, Center, Flex, Spacer, Tooltip } from "@chakra-ui/react";
-import { BiSolidHeart, BiCommentDetail, BiSolidCircle } from "react-icons/bi";
+import { CardFooter, Flex, Spacer } from "@chakra-ui/react";
+import { BiSolidHeart, BiCommentDetail } from "react-icons/bi";
 import { UserType } from "@/types/types";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +23,6 @@ function VibeItemFooter({
   totalLike,
   totalReply,
   isLiked,
-  badLabels,
 }: VibeItemFooterProps) {
   const [isVibeLiked, setVibeLiked] = useState<boolean>(isLiked);
   const [totalVibeLike, setTotalVibeLike] = useState<number>(totalLike);
