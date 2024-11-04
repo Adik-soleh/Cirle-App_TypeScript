@@ -96,7 +96,7 @@ export interface EditedUserType {
     bio: string | null
 }
 
-export interface VibeDataType {
+export interface PostDataType {
     content: string
     badLabels: string[]
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

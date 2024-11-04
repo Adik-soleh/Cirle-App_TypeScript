@@ -15,7 +15,7 @@ import { fontSizing } from '@/styles/style'
 
 interface EditProfileModalProps {
     onClose: () => void
-    avatar: string
+    avatar: string | any
     banner: string
     dark: boolean
 }

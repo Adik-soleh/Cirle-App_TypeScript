@@ -1,16 +1,16 @@
-import { DetailedVibeType, UserType, VibeDataType } from '@/types/types'
+import { DetailedVibeType, UserType, PostDataType } from '@/types/types'
 import { Box } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 
 import API from '@/networks/api'
-import VibeList from '@/components/vibes/VibeList'
+import VibeList from '@/components/vibes/PostsList'
 import VibeItem from '@/components/vibes/VibeItem'
-import NewVibe from '@/components/vibes/NewVibe'
+import NewVibe from '@/components/vibes/NewPost'
 import EmptyMessage from '@/components/utils/EmptyMessage'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 
 interface VibeDetailProps {
-    onReply: (data: VibeDataType) => void
+    onReply: (data: PostDataType) => void
     vibe: DetailedVibeType
     noImage?: boolean
 }
@@ -44,7 +44,7 @@ function VibeDetail({ vibe, onReply, noImage }: VibeDetailProps) {
                     placeholder={'Type your reply!'}
                     onPost={onReply}
                     imagePreviewId={'atDetail'}
-                    buttonText={'Reply'}
+                    textButton={'Reply'}
                 />
                 <EmptyMessage
                     header={'No replies to this vibe so far.'}
@@ -60,7 +60,7 @@ function VibeDetail({ vibe, onReply, noImage }: VibeDetailProps) {
                 placeholder={'Type your reply!'}
                 onPost={onReply}
                 imagePreviewId={'atDetail'}
-                buttonText={'Reply'}
+                textButton={'Reply'}
             />
             {users.length ? (
                 <VibeList vibes={repliesWithAuthor} noLink />

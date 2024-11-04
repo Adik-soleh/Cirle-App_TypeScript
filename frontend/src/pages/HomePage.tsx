@@ -1,15 +1,14 @@
 import { Box, Grid, GridItem } from '@chakra-ui/react'
-import { useVibes } from '@/hooks/useVibes'
+import { usePost } from '@/hooks/useVibes'
 
 import MainBar from '@/components/bars/MainBar'
 import SideBar from '@/components/bars/SideBar'
 import ProfileCard from '@/components/cards/ProfileCard'
 import SuggestionCard from '@/components/cards/SuggestionCard'
 import DeveloperCard from '@/components/cards/DeveloperCard'
-import VibeList from '@/components/vibes/VibeList'
-import NewVibe from '@/components/vibes/NewVibe'
+import VibeList from '@/components/vibes/PostsList'
+import NewVibe from '@/components/vibes/NewPost'
 import NavigationHeading from '@/components/navigations/NavigationHeading'
-import CircleSpinner from '@/components/utils/CircleSpinner'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 import { useEffect, useState } from 'react'
@@ -19,7 +18,7 @@ import EmptyMessage from '@/components/utils/EmptyMessage'
 function HomePage() {
     const loggedUser = useSelector((states: RootState) => states.loggedUser.value)
 
-    const [vibes, onPost] = useVibes()
+    const [vibes, onPost] = usePost()
     const [preparedVibes, setPreparedVibes] = useState<VibeType[]>([])
 
     useEffect(() => {
@@ -57,7 +56,6 @@ function HomePage() {
                     ) : (
                         <Box mt={'3rem'}>
                             <EmptyMessage header={'No status posted now..'} />
-                            {/* <CircleSpinner /> */}
                         </Box>
                     )}
                 </MainBar>

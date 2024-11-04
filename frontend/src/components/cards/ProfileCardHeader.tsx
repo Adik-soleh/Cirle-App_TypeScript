@@ -154,7 +154,7 @@ function ProfileCardHeader<T extends FieldValues>(props: ProfileCardHeaderProps<
                 </Flex>
             )}
             <BrandModal isOpen={isOpen} onClose={onClose} size={'xl'}>
-                <EditProfileModal avatar={avatar} banner={banner} onClose={onClose} />
+                <EditProfileModal avatar={avatar} banner={banner} onClose={onClose} dark />
             </BrandModal>
         </CardHeader>
     )

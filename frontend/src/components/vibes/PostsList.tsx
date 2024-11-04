@@ -10,7 +10,7 @@ interface VibeListProps {
     noLink?: boolean
 }
 
-function VibeList({ vibes, noLink }: VibeListProps) {
+function PostsList({ vibes, noLink }: VibeListProps) {
     if (vibes.length) {
         return (
             <Box>
@@ -32,4 +32,4 @@ function VibeList({ vibes, noLink }: VibeListProps) {
     return <EmptyMessage header={'No status posted now..'} />
 }
 
-export default VibeList
+export default PostsList

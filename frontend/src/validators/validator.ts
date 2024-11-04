@@ -51,7 +51,7 @@ export const ResetSchema: ZodType<ResetDataType> = z
         path: ['general'],
     })
 
-export const VibeSchema: ZodType = z.object({
+export const PostSchema: ZodType = z.object({
     content: z
         .string()
         .min(1, {

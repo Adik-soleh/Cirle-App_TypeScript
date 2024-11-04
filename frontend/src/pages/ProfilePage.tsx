@@ -5,6 +5,8 @@ import { UserType } from '@/types/types'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
+import { CgFeed } from "react-icons/cg";
+import { GrMultimedia } from "react-icons/gr";
 
 import MainBar from '@/components/bars/MainBar'
 import SideBar from '@/components/bars/SideBar'
@@ -15,10 +17,11 @@ import ProfileCardBody from '@/components/cards/ProfileCardBody'
 import ProfileCardFooter from '@/components/cards/ProfileCardFooter'
 import NavigationHeading from '@/components/navigations/NavigationHeading'
 import BrandTabs from '@/components/utils/BrandTabs'
-import VibeList from '@/components/vibes/VibeList'
+import VibeList from '@/components/vibes/PostsList'
 import MediaCollection from '@/components/utils/MediaCollection'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 import API from '@/networks/api'
+
 
 interface ProfilePageProps {
     dark?: boolean
@@ -104,9 +107,9 @@ function ProfilePage({dark}: ProfilePageProps) {
                             />
                         </Card>
                         <BrandTabs
-                            leftTitle={'All Post'}
+                            leftTitle={<CgFeed/>}
                             leftContent={<VibeList vibes={vibes} />}
-                            rightTitle={'Media'}
+                            rightTitle={<GrMultimedia/>}
                             rightContent={<MediaCollection vibes={vibes} />}
                         />
                     </MainBar>

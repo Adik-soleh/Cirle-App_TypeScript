@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { Grid, GridItem, Card, useColorMode } from '@chakra-ui/react'
 import { BiLeftArrowAlt } from 'react-icons/bi'
+import { CgFeed } from "react-icons/cg";
+import { GrMultimedia } from "react-icons/gr";
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 
@@ -13,7 +15,7 @@ import ProfileCardBody from '@/components/cards/ProfileCardBody'
 import ProfileCardFooter from '@/components/cards/ProfileCardFooter'
 import NavigationHeading from '@/components/navigations/NavigationHeading'
 import BrandTabs from '@/components/utils/BrandTabs'
-import VibeList from '@/components/vibes/VibeList'
+import VibeList from '@/components/vibes/PostsList'
 import MediaCollection from '@/components/utils/MediaCollection'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 
@@ -68,9 +70,9 @@ function MePage({dark}: MePageProps) {
                             />
                         </Card>
                         <BrandTabs
-                            leftTitle={'All Post'}
+                            leftTitle={<><CgFeed/></>  }
                             leftContent={<VibeList vibes={vibes} />}
-                            rightTitle={'Media'}
+                            rightTitle={<GrMultimedia/>}
                             rightContent={<MediaCollection vibes={vibes} />}
                         />
                     </MainBar>

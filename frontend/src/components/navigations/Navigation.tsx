@@ -10,8 +10,8 @@ import API from '@/networks/api'
 import NavigationItem, { LogoutItem } from './NavigationItem'
 import SolidButton from '@/components/buttons/SolidButton'
 import BrandModal from '@/components/modals/BrandModal'
-import NewVibe from '@/components/vibes/NewVibe'
-import { useVibes } from '@/hooks/useVibes'
+import NewVibe from '@/components/vibes/NewPost'
+import { usePost } from '@/hooks/useVibes'
 import { RootState } from '@/redux';
 import { UserType } from '@/types/types';
 import DarkModeToggle from '@/DarkMode/useColorMode';
@@ -21,7 +21,7 @@ function Navigation() {
         (states: RootState) => states.loggedUser.value
     )
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [, onPost] = useVibes({ onClose })
+    const [, onPost] = usePost({ onClose })
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -44,8 +44,8 @@ function Navigation() {
             pos={'fixed'}
             w={'266px'}
             >
+            <Image src={'/circle.png'} objectFit={'cover'} width={'85%'} mb={'1rem'} />
             <DarkModeToggle/>
-            <Image src={'/circle.png'} objectFit={'cover'} width={'80%'} mb={'1rem'} />
             <Link to={'/'}>
                 <NavigationItem icon={<BiSolidHome />} text={'Home'} />
             </Link>

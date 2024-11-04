@@ -3,9 +3,9 @@ import { tabStyle } from '@/styles/style'
 import { ReactNode } from 'react'
 
 interface BrandTabsProps {
-    leftTitle: string
+    leftTitle: string | any
     leftContent: ReactNode
-    rightTitle: string
+    rightTitle: string | any
     rightContent: ReactNode
 }
 

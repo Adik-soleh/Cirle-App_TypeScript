@@ -1,5 +1,5 @@
 import { QueryClient, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { VibeDataType, VibeType } from '@/types/types'
+import { PostDataType, VibeType } from '@/types/types'
 
 import API from '@/networks/api'
 import useCircleToast from '@/hooks/useCircleToast'
@@ -8,9 +8,9 @@ interface useVibesParams {
     onClose?: () => void
 }
 
-function useVibes(
+function usePost(
     params: useVibesParams = {}
-): [VibeType[] | undefined, (data: VibeDataType) => Promise<void>, (targetId: number) => void] {
+): [VibeType[] | undefined, (data: PostDataType) => Promise<void>, (targetId: number) => void] {
     const createToast = useCircleToast()
     const queryClient: QueryClient = useQueryClient()
 
@@ -33,7 +33,7 @@ function useVibes(
         },
     })
 
-    async function onPost(data: VibeDataType): Promise<void> {
+    async function onPost(data: PostDataType): Promise<void> {
 
         const formData: FormData = new FormData()
 
@@ -74,4 +74,4 @@ function useVibes(
     return [vibes, onPost, onDelete]
 }
 
-export { useVibes }
+export { usePost }

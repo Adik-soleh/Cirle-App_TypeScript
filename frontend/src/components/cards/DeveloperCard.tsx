@@ -1,4 +1,4 @@
-import { Flex, Text, Image } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import { BiLogoGithub, BiLogoLinkedinSquare, BiLogoInstagram, BiLogoTwitter } from 'react-icons/bi'
 import { fontSizing } from '@/styles/style'
 
@@ -27,11 +27,6 @@ function DeveloperCard() {
                 <GhostButton color="circle.dark">
                     <BiLogoTwitter fontSize={fontSizing.big} />
                 </GhostButton>
-            </Flex>
-            <Flex color={'circle.dark'} fontSize={fontSizing.smaller} alignItems={'center'}>
-                Powered by
-                <Image src={'/dumbways-logo.png'} boxSize={'1rem'} display={'inline'} mx=".5rem" />
-                DumbWays Indonesia
             </Flex>
         </BrandCard>
     )

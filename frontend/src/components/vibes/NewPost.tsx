@@ -1,8 +1,8 @@
 import { Avatar, Flex, Spacer, Box, Divider, Input, FormControl } from '@chakra-ui/react'
 import { RiImageAddFill } from "react-icons/ri";
 import { useForm } from 'react-hook-form'
-import { VibeDataType } from '@/types/types'
-import { VibeSchema } from '@/validators/validator'
+import { PostDataType } from '@/types/types'
+import { PostSchema } from '@/validators/validator'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import ImagePreview from '@/components/utils/ImagePreview'
@@ -10,17 +10,17 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 
 import SolidButton from '@/components/buttons/SolidButton'
-import VibeInput from '@/components/inputs/VibeInput'
+import PostInput from '@/components/inputs/PostInput'
 
-interface NewVibeProps {
-    onPost: (data: VibeDataType) => Promise<void> | void
+interface NewPostProps {
+    onPost: (data: PostDataType) => Promise<void> | void
     placeholder: string
-    buttonText?: string
+    textButton?: string
     imagePreviewId: string
 }
 
-function NewVibe(props: NewVibeProps) {
-    const { placeholder, buttonText, imagePreviewId } = props
+function NewVibe(props: NewPostProps) {
+    const { placeholder, textButton, imagePreviewId } = props
     const [imagePreview, setImagePreview] = useState<string>('')
     const loggedUser = useSelector((states: RootState) => states.loggedUser.value)
 
@@ -29,8 +29,8 @@ function NewVibe(props: NewVibeProps) {
         handleSubmit,
         formState: { errors },
         resetField,
-    } = useForm<VibeDataType>({
-        resolver: zodResolver(VibeSchema),
+    } = useForm<PostDataType>({
+        resolver: zodResolver(PostSchema),
     })
 
     function onImageChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -46,7 +46,7 @@ function NewVibe(props: NewVibeProps) {
             <Flex direction={'column'} justifyContent={'center'} gap={'1rem'}>
                 <Flex alignItems={'start'} gap={'1rem'} mx={'1rem'} mt={'1rem'}>
                     <Avatar src={loggedUser?.avatar} />
-                    <VibeInput
+                    <PostInput
                         placeholder={placeholder}
                         name={'content'}
                         register={register}
@@ -81,7 +81,7 @@ function NewVibe(props: NewVibeProps) {
                     </FormControl>
                     <Box width={'15%'}>
                         <SolidButton
-                            text={buttonText ? buttonText : 'Post'}
+                            text={textButton ? textButton : 'Post'}
                             onClick={handleSubmit(async (data) => {
                                 await props.onPost(data)
 

@@ -1,4 +1,4 @@
-import { DetailedVibeType, ReplyType, VibeDataType } from "@/types/types";
+import { DetailedVibeType, ReplyType, PostDataType } from "@/types/types";
 import {
   useQuery,
   useQueryClient,
@@ -13,7 +13,7 @@ function useReplies(
   targetId: number | null = null
 ): [
   DetailedVibeType | null | undefined,
-  (data: VibeDataType) => void,
+  (data: PostDataType) => void,
   (targetId: number) => void
 ] {
   const createToast = useCircleToast();
@@ -44,7 +44,7 @@ function useReplies(
     },
   });
 
-  async function onReply(data: VibeDataType): Promise<void> {
+  async function onReply(data: PostDataType): Promise<void> {
     const formData: FormData = new FormData();
 
     if (targetId) {

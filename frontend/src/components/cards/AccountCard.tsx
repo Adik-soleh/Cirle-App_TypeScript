@@ -73,11 +73,11 @@ function AccountCard({ id, username, name, bio, avatar, isFollowed, noBio }: Acc
                     </Text>
                 </Link>
                 {bio && !noBio && <Text fontSize={fontSizing.smaller}>{bio}</Text>}
-            </Flex>
+            </Flex >
             {isLoading ? (
                 <HollowButton children={<CircleSpinner />} />
             ) : isUserFollowed ? (
-                <HollowButton text={'Follxowing'} onClick={onFollow} dark />
+                <HollowButton text={'Following'} onClick={onFollow} dark />
             ) : (
                 <HollowButton text={'Follow'} onClick={onFollow} />
             )}

@@ -5,7 +5,7 @@ import { BiDotsHorizontalRounded } from 'react-icons/bi'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 import { UserType } from '@/types/types'
-import { useVibes } from '@/hooks/useVibes'
+import { usePost } from '@/hooks/useVibes'
 import { useReplies } from '@/hooks/useReplies'
 import { useNavigate } from 'react-router-dom'
 
@@ -36,7 +36,7 @@ function VibeItemHeader({
     const loggedUser = useSelector((states: RootState) => states.loggedUser.value)
 
     const navigate = useNavigate()
-    const [, , onDelete] = useVibes()
+    const [, , onDelete] = usePost()
     const [, , onDeleteReply] = useReplies()
 
     function onProfileClick() {
