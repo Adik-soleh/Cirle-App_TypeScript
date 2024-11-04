@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import API from "@/networks/api";
-import VibeItemButton from "./VibeItemButton";
+import VibeItemButton from "./PostItemButton";
 
 interface VibeItemFooterProps {
   vibeId: number;

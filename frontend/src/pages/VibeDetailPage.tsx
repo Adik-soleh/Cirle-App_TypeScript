@@ -8,8 +8,8 @@ import SideBar from '@/components/bars/SideBar'
 import ProfileCard from '@/components/cards/ProfileCard'
 import SuggestionCard from '@/components/cards/SuggestionCard'
 import DeveloperCard from '@/components/cards/DeveloperCard'
-import NavigationHeading from '@/components/navigations/NavigationHeading'
-import VibeDetail from '@/components/vibes/VibeDetail'
+import NavigationHeading from '@/components/leftPannel/NavigationHeading'
+import VibeDetail from '@/components/post/DetailPost'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 
 function VibeDetailPage() {

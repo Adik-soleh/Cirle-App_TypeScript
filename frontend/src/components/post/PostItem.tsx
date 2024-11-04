@@ -2,10 +2,10 @@ import { Card, Flex, Avatar, Box, Divider, useDisclosure, useColorMode } from '@
 import { VibeType } from '@/types/types';
 import { vibeHover } from '@/styles/style';
 
-import VibeItemHeader from '@/components/vibes/VibeItemHeader';
-import VibeItemBody from '@/components/vibes/VibeItemBody';
-import VibeItemFooter from '@/components/vibes/VibeItemFooter';
-import ImageModal from '@/components/modals/ImageModal';
+import VibeItemHeader from '@/components/post/PostItemHeader';
+import VibeItemBody from '@/components/post/PostItemBody';
+import VibeItemFooter from '@/components/post/PostItemFooter';
+import ImageModal from '@/components/modalsCard/ImageModal';
 import { useNavigate } from 'react-router-dom';
 import GhostButton from '@/components/buttons/GhostButton';
 

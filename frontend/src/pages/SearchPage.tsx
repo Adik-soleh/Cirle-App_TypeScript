@@ -15,7 +15,7 @@ import SuggestionCard from '@/components/cards/SuggestionCard'
 import DeveloperCard from '@/components/cards/DeveloperCard'
 import AccountCard from '@/components/cards/AccountCard'
 import IconInput from '@/components/inputs/IconInput'
-import NavigationHeading from '@/components/navigations/NavigationHeading'
+import NavigationHeading from '@/components/leftPannel/NavigationHeading'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 import EmptyMessage from '@/components/utils/EmptyMessage'
 

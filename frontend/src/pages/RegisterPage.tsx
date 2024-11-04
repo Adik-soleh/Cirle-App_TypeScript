@@ -29,7 +29,7 @@ function RegisterPage() {
             <Flex direction="column" gap="1rem">
                 <Image src="/circle.png" width="35%" mt="3rem" />
                 <Text fontSize={fontSizing.bigger} fontWeight="600" mt="-0.75rem">
-                    Create new account
+                    Register account
                 </Text>
                 <RegisterInput onRegister={onRegister} />
                 <Text>

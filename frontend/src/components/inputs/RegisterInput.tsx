@@ -54,7 +54,7 @@ function RegisterInput(props: RegisterInputProps) {
 
             <Box mt={'.5rem'}>
                 <SolidButton
-                    text={'Create'}
+                    text={'Register'}
                     onClick={handleSubmit((data) => {
                         props.onRegister(data)
                     })}

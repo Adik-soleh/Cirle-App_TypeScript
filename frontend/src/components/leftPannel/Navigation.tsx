@@ -9,9 +9,9 @@ import API from '@/networks/api'
 
 import NavigationItem, { LogoutItem } from './NavigationItem'
 import SolidButton from '@/components/buttons/SolidButton'
-import BrandModal from '@/components/modals/BrandModal'
-import NewVibe from '@/components/vibes/NewPost'
-import { usePost } from '@/hooks/useVibes'
+import BrandModal from '@/components/modalsCard/BrandModal'
+import NewVibe from '@/components/post/NewPost'
+import { usePost } from '@/hooks/usePosts'
 import { RootState } from '@/redux';
 import { UserType } from '@/types/types';
 import DarkModeToggle from '@/DarkMode/useColorMode';

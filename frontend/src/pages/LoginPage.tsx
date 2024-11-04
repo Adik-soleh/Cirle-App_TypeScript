@@ -49,7 +49,7 @@ function LoginPage() {
                         color={'teal'}
                         ml={'.25rem'}
                     >
-                        Create one.
+                        Register Now
                     </CircleLink>
                 </Text>
             </Flex>

@@ -3,9 +3,9 @@ import { Box } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 
 import API from '@/networks/api'
-import VibeList from '@/components/vibes/PostsList'
-import VibeItem from '@/components/vibes/VibeItem'
-import NewVibe from '@/components/vibes/NewPost'
+import VibeList from '@/components/post/PostsList'
+import VibeItem from '@/components/post/PostItem'
+import NewVibe from '@/components/post/NewPost'
 import EmptyMessage from '@/components/utils/EmptyMessage'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 

@@ -3,7 +3,7 @@ import { Grid, Image, useDisclosure } from '@chakra-ui/react'
 import { useSearchParams } from 'react-router-dom'
 
 import GhostButton from '@/components/buttons/GhostButton'
-import ImageModal from '@/components/modals/ImageModal'
+import ImageModal from '@/components/modalsCard/ImageModal'
 import EmptyMessage from '@/components/utils/EmptyMessage'
 
 interface MediaCollectionProps {

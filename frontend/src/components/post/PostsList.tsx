@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Box } from '@chakra-ui/react'
 import { VibeType } from '@/types/types'
 
-import VibeItem from './VibeItem'
+import VibeItem from './PostItem'
 import EmptyMessage from '@/components/utils/EmptyMessage'
 
 interface VibeListProps {

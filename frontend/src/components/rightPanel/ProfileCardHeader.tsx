@@ -5,8 +5,8 @@ import { fontSizing } from '@/styles/style'
 import { useState } from 'react'
 
 import HollowButton from '@/components/buttons/HollowButton'
-import BrandModal from '@/components/modals/BrandModal'
-import EditProfileModal from '@/components/modals/EditProfileModal'
+import BrandModal from '@/components/modalsCard/BrandModal'
+import EditProfileModal from '@/components/modalsCard/EditProfileModal'
 
 interface ProfileCardHeaderProps<T extends FieldValues> {
     buttonText?: string

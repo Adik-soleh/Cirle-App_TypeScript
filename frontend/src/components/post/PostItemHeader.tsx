@@ -5,11 +5,11 @@ import { BiDotsHorizontalRounded } from 'react-icons/bi'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 import { UserType } from '@/types/types'
-import { usePost } from '@/hooks/useVibes'
+import { usePost } from '@/hooks/usePosts'
 import { useReplies } from '@/hooks/useReplies'
 import { useNavigate } from 'react-router-dom'
 
-import VibeItemButton from '@/components/vibes/VibeItemButton'
+import VibeItemButton from '@/components/post/PostItemButton'
 import GhostButton from '@/components/buttons/GhostButton'
 
 interface VibeItemHeaderProps {

@@ -13,7 +13,7 @@ import SuggestionCard from '@/components/cards/SuggestionCard'
 import DeveloperCard from '@/components/cards/DeveloperCard'
 import BrandTabs from '@/components/utils/BrandTabs'
 import AccountListCard from '@/components/cards/AccountListCard'
-import NavigationHeading from '@/components/navigations/NavigationHeading'
+import NavigationHeading from '@/components/leftPannel/NavigationHeading'
 import ProfileCard from '@/components/cards/ProfileCard'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 

@@ -5,9 +5,9 @@ import { useState } from 'react'
 import { useReplies } from '@/hooks/useReplies'
 import { useSearchParams } from 'react-router-dom'
 
-import BrandModal from '@/components/modals/BrandModal'
+import BrandModal from '@/components/modalsCard/BrandModal'
 import GhostButton from '@/components/buttons/GhostButton'
-import VibeDetail from '@/components/vibes/VibeDetail'
+import VibeDetail from '@/components/post/DetailPost'
 
 interface ImageModalProps {
     onClose: () => void
