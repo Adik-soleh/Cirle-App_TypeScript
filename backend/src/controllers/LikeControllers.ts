@@ -25,7 +25,7 @@ class Redis {
         }
 
         // Ensure the database has the latest vibes data
-        await prisma.vibe.update({
+        await prisma.status.update({
             where: { id: targetId },
             data: { updatedAt: new Date() }, // Assuming you have an `updatedAt` field to track changes
         });

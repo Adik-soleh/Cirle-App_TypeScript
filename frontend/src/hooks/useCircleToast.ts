@@ -38,7 +38,7 @@ function useCircleToast() {
 
                 return {
                     title: title,
-                    description: 'Something went wrong.',
+                    description: 'email/username alredy exis',
                 }
             },
             loading: { title: 'Loading', description: "Please wait we're working on it." },

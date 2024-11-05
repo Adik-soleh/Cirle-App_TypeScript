@@ -11,7 +11,7 @@ const prisma = new PrismaClient()
 class VibeServices {
     async getVibes(loggedUser: UserType): Promise<ServiceResponseDto<VibeWithDetailType[]>> {
         try {
-            const rawVibes: VibeWithDetailType[] = await prisma.vibe.findMany({
+            const rawVibes: VibeWithDetailType[] = await prisma.status.findMany({
                 include: {
                     replies: true,
                     likes: true,
@@ -64,7 +64,7 @@ class VibeServices {
         loggedUser: UserType
     ): Promise<ServiceResponseDto<VibeWithDetailType>> {
         try {
-            const rawVibe: VibeWithDetailType = await prisma.vibe.findUnique({
+            const rawVibe: VibeWithDetailType = await prisma.status.findUnique({
                 where: {
                     id: id,
                 },
@@ -122,7 +122,7 @@ class VibeServices {
 
     async getUserVibes(id: number): Promise<ServiceResponseDto<VibeWithDetailType[]>> {
         try {
-            const rawVibes: VibeWithDetailType[] = await prisma.vibe.findMany({
+            const rawVibes: VibeWithDetailType[] = await prisma.status.findMany({
                 where: {
                     authorId: id,
                 },
@@ -170,7 +170,7 @@ class VibeServices {
 
            
 
-            const postedVibe = await prisma.vibe.create({
+            const postedVibe = await prisma.status.create({
                 data: vibeDto,
             })
 
@@ -194,7 +194,7 @@ class VibeServices {
 
     async deleteVibe(id: number): Promise<ServiceResponseDto<PostType>> {
         try {
-            const deletedVibes = await prisma.vibe.delete({
+            const deletedVibes = await prisma.status.delete({
                 where: {
                     id: id,
                 },

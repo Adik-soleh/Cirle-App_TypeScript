@@ -12,6 +12,8 @@ import FollowControllers from "./controllers/FollowControllers";
 import authenticate from "./middlewares/authenticate";
 import uploader from "./middlewares/upload";
 import Redis from "./middlewares/prisma";
+import swaggerUI from 'swagger-ui-express'
+import swaggerDoc from './libs/swagger.json'
 
 const prisma = new PrismaClient();
 
@@ -22,7 +24,26 @@ const port = PORT;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/api/v1", v1);
+app.use("/v1", v1);
+v1.use('/', swaggerUI.serve)
+v1.get(
+  '/',
+  swaggerUI.setup(swaggerDoc, {
+      customSiteTitle: 'Circle App API',
+      customfavIcon: 'NONE',
+      customCss: `
+              .swagger-ui .topbar { display: none } 
+              .information-container.wrapper { background: #8e3e63; padding: 2rem } 
+              .information-container .info { margin: 0 } 
+              .information-container .info .main { margin: 0 !important} 
+              .information-container .info .main .title { color: #ffffff} 
+              .renderedMarkdown p { margin: 0 !important; color: #ffffff !important }
+              `,
+      swaggerOptions: {
+          persistAuthorization: true,
+      },
+  })
+)
 
 
 async function main() {

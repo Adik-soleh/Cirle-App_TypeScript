@@ -8,7 +8,6 @@ import API from '@/connect/api'
 import AccountCard from './AccountCard'
 import BrandCard from './BrandCard'
 import BrandHeading from '@/components/utils/BrandHeading'
-import CircleSpinner from '@/components/utils/CircleSpinner'
 
 function SuggestionCard() {
     const [users, setUsers] = useState<UserType[]>([])
