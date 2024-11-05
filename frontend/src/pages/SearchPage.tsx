@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 import { UserType } from '@/types/types'
 
-import API from '@/networks/api'
+import API from '@/connect/api'
 import MainBar from '@/components/bars/MainBar'
 import SideBar from '@/components/bars/SideBar'
 import ProfileCard from '@/components/rightPanel/ProfileCard'

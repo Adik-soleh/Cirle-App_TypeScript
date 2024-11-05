@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 
-import API from '@/networks/api'
+import API from '@/connect/api'
 import AccountCard from './AccountCard'
 import BrandCard from './BrandCard'
 import BrandHeading from '@/components/utils/BrandHeading'

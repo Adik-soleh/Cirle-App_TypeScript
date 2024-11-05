@@ -20,7 +20,7 @@ import BrandTabs from '@/components/utils/BrandTabs'
 import VibeList from '@/components/post/PostsList'
 import MediaCollection from '@/components/utils/MediaCollection'
 import CircleSpinner from '@/components/utils/CircleSpinner'
-import API from '@/networks/api'
+import API from '@/connect/api'
 
 
 interface ProfilePageProps {

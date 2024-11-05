@@ -2,7 +2,7 @@ import { DetailedVibeType, UserType, PostDataType } from '@/types/types'
 import { Box } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 
-import API from '@/networks/api'
+import API from '@/connect/api'
 import VibeList from '@/components/post/PostsList'
 import VibeItem from '@/components/post/PostItem'
 import NewVibe from '@/components/post/NewPost'

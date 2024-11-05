@@ -3,7 +3,7 @@ import { Container, Flex, Text, Image, Link as CircleLink } from '@chakra-ui/rea
 import { fontSizing } from '@/styles/style'
 import { ForgotDataType } from '@/types/types'
 
-import API from '@/networks/api'
+import API from '@/connect/api'
 import ForgotInput from '@/components/inputs/ForgotInput'
 import useCircleToast from '@/hooks/useCircleToast'
 

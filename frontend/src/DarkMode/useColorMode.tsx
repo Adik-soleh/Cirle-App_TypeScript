@@ -1,6 +1,8 @@
 import { useColorMode, Box } from '@chakra-ui/react';
 import { BiSun, BiMoon } from 'react-icons/bi';
 // import "./DarkMode"
+import '../DarkMode/DarkMode.css'
+
 function DarkModeToggle() {
     const { colorMode, toggleColorMode } = useColorMode();
 

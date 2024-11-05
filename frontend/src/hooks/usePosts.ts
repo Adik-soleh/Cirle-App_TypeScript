@@ -1,7 +1,7 @@
 import { QueryClient, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { PostDataType, VibeType } from '@/types/types'
 
-import API from '@/networks/api'
+import API from '@/connect/api'
 import useCircleToast from '@/hooks/useCircleToast'
 
 interface useVibesParams {
@@ -16,7 +16,7 @@ function usePost(
 
     const { data: vibes } = useQuery<VibeType[]>({
         queryKey: ['vibes'],
-        queryFn: API.GET_ALL_VIBES,
+        queryFn: API.GET_ALL_POSTS,
     })
 
     const postVibe = useMutation({
@@ -52,7 +52,7 @@ function usePost(
     }
 
     async function POST_VIBE(data: FormData): Promise<string> {
-        const postVIbe: Promise<string> = API.POST_VIBE(data)
+        const postVIbe: Promise<string> = API.POST(data)
         createToast(postVIbe, {
             title: 'Post Vibe',
             message: 'Vibe successfully posted!',
@@ -62,7 +62,7 @@ function usePost(
     }
 
     async function DELETE_VIBE(targetId: number): Promise<VibeType> {
-        const deleteVibe: Promise<VibeType> = API.DELETE_VIBE(targetId)
+        const deleteVibe: Promise<VibeType> = API.DELETE_POST(targetId)
         createToast(deleteVibe, {
             title: 'Delete Vibe',
             message: 'Vibe successfully deleted!',

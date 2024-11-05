@@ -5,7 +5,7 @@ import { UserType } from '@/types/types'
 import { useDispatch } from 'react-redux'
 import { setLoggedUser } from '@/features/auth/authSlice'
 
-import API from '@/networks/api'
+import API from '@/connect/api'
 import HollowButton from '@/components/buttons/HollowButton'
 import CircleSpinner from '@/components/utils/CircleSpinner'
 import { Link } from 'react-router-dom'

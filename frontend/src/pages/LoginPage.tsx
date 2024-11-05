@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 
 import useCircleToast from '@/hooks/useCircleToast'
 import LoginInput from '@/components/inputs/LoginInput'
-import API from '@/networks/api'
+import API from '@/connect/api'
 
 function LoginPage() {
     const dispatch = useDispatch()

@@ -3,7 +3,7 @@ import { EditedUserType, EditUserDataType, UserType } from '@/types/types'
 import { useDispatch } from 'react-redux'
 import { setLoggedUser } from '@/features/auth/authSlice'
 
-import API from '@/networks/api'
+import API from '@/connect/api'
 import useCircleToast from '@/hooks/useCircleToast'
 
 interface useEditUserParams {

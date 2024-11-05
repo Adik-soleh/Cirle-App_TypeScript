@@ -5,7 +5,7 @@ import { CgLogOut } from "react-icons/cg";
 
 import { useDispatch, useSelector } from 'react-redux'
 import { unsetLoggedUser } from '@/features/auth/authSlice'
-import API from '@/networks/api'
+import API from '@/connect/api'
 
 import NavigationItem, { LogoutItem } from './NavigationItem'
 import SolidButton from '@/components/buttons/SolidButton'

@@ -5,7 +5,7 @@ import { RegisterDataType } from '@/types/types';
 
 import useCircleToast from '@/hooks/useCircleToast';
 import RegisterInput from '@/components/inputs/RegisterInput';
-import API from '@/networks/api';
+import API from '@/connect/api';
 
 function RegisterPage() {
     const navigate = useNavigate();

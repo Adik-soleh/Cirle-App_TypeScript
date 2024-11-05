@@ -4,7 +4,7 @@ import { Params, useNavigate, useParams } from 'react-router-dom'
 
 import ResetInput from '@/components/inputs/ResetInput'
 import { ResetDataType } from '@/types/types'
-import api from '@/networks/api'
+import api from '@/connect/api'
 import { useEffect } from 'react'
 import useCircleToast from '@/hooks/useCircleToast'
 

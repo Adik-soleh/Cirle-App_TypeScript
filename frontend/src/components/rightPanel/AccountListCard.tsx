@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/react'
 import { UserType } from '@/types/types'
 
-import AccountCard from '@/components/cards/AccountCard'
+import AccountCard from '@/components/rightPanel/AccountCard'
 import EmptyMessage from '@/components/utils/EmptyMessage'
 
 interface AccountListCardProps {

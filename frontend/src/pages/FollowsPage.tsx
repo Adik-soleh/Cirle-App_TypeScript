@@ -6,7 +6,7 @@ import { UserType } from '@/types/types'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux'
 
-import API from '@/networks/api'
+import API from '@/connect/api'
 import MainBar from '@/components/bars/MainBar'
 import SideBar from '@/components/bars/SideBar'
 import SuggestionCard from '@/components/rightPanel/SuggestionCard'

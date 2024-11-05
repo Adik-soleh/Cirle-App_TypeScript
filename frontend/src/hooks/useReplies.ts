@@ -6,7 +6,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 
-import API from "@/networks/api";
+import API from "@/connect/api";
 import useCircleToast from "@/hooks/useCircleToast";
 
 function useReplies(
@@ -23,7 +23,7 @@ function useReplies(
     queryKey: ["vibe", targetId],
     queryFn: () => {
       if (targetId) {
-        return API.GET_SINGLE_VIBE(targetId);
+        return API.GET_SINGLE_POST(targetId);
       }
 
       return null;

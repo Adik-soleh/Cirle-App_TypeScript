@@ -3,7 +3,7 @@ import { UserType } from '@/types/types'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import API from '@/networks/api'
+import API from '@/connect/api'
 
 function useFollows(isFollowed: boolean | undefined) {
     const [isLoading, setLoading] = useState<boolean>(false)
