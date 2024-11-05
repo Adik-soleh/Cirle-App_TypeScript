@@ -2,7 +2,6 @@ import { PrismaClient } from "@prisma/client";
 import { PORT } from "./configs/config";
 import express from "express";
 import cors from "cors";
-import swaggerUI from "swagger-ui-express";
 
 import VibeControllers from "./controllers/PostControllers";
 import AuthControllers from "./controllers/AuthControllers";
@@ -25,7 +24,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1", v1);
 
-// v1.use("/", swaggerUI.serve);
 
 async function main() {
   v1.post("/register", AuthControllers.register);
