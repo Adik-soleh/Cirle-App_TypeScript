@@ -110,7 +110,7 @@ class API {
         }
     }
 
-    GET_ALL_VIBES = async (): Promise<VibeType[]> => {
+    GET_ALL_POSTS = async (): Promise<VibeType[]> => {
         try {
             const response = await axios.get(`${CONFIGS.BASE_URL}/posts`, {
                 headers: {
@@ -128,7 +128,7 @@ class API {
         }
     }
 
-    GET_SINGLE_VIBE = async (id: number): Promise<DetailedVibeType> => {
+    GET_SINGLE_POST = async (id: number): Promise<DetailedVibeType> => {
         try {
             const response = await axios.get(`${CONFIGS.BASE_URL}/posts/${id}`, {
                 headers: {
@@ -146,7 +146,7 @@ class API {
         }
     }
 
-    POST_VIBE = async (data: FormData): Promise<string> => {
+    POST = async (data: FormData): Promise<string> => {
         try {
             const response: AxiosResponse = await axios.post(`${CONFIGS.BASE_URL}/posts`, data, {
                 headers: {
@@ -164,7 +164,7 @@ class API {
         }
     }
 
-    DELETE_VIBE = async (targetUd: number): Promise<VibeType> => {
+    DELETE_POST = async (targetUd: number): Promise<VibeType> => {
         try {
             const response = await axios.delete(`${CONFIGS.BASE_URL}/posts/${targetUd}`, {
                 headers: {
