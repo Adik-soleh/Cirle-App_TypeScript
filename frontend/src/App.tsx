@@ -8,7 +8,7 @@ import { setLoggedUser, unsetLoggedUser } from '@/features/auth/authSlice'
 
 import './assets/base.css'
 import API from '@/connect/api'
-import CircleLayout from './layouts/AppLayout'
+import CircleLayout from './layouts/CircleLayout'
 import HomePage from './pages/HomePage'
 import VibeDetailPage from './pages/DetailPost'
 import MePage from './pages/MePage'

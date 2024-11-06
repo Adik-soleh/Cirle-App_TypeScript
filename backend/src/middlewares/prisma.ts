@@ -6,7 +6,7 @@ import ResponseDto from '../dtos/ResponseDto';
 class Redis {
     async getVibes(req: Request, res: Response, next: NextFunction) {
         try {
-            const vibes = await prisma.status.findMany({
+            const vibes = await prisma.posts.findMany({
                 include: {
                     author: true,
                     replies: true,
@@ -39,7 +39,7 @@ class Redis {
     async deleteVibes() {
         try {
             // Deletes all vibes from the database
-            await prisma.status.deleteMany();
+            await prisma.posts.deleteMany();
             console.log('All vibes deleted successfully');
         } catch (error) {
             console.error('Error deleting vibes:', error);
