@@ -7,8 +7,7 @@
         "dev": "nodemon src/index.ts",
         "build": "tsc && copyfiles -u 1 src/public/header.jpg dist && copyfiles -u 1 src/templates/mail-template.html",
         "start": "node dist/index.js",
-        "swagger:generate": "nodemon src/libs/swagger.ts",
-        "postinstall": "prisma generate"
+        "swagger:generate": "nodemon src/libs/swagger.ts"
     },
     "dependencies": {
         "@prisma/client": "^5.21.1",
