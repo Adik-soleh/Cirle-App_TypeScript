@@ -1,5 +1,5 @@
 {
-    "name": "circle-app-server",
+    "name": "circle-app",
     "version": "0.0.1",
     "description": "A server for Circle App",
     "type": "commonjs",
@@ -13,6 +13,7 @@
         "@now/node": "^1.8.5",
         "@prisma/client": "^5.21.1",
         "@types/bcrypt": "^5.0.2",
+        "@vercel/node": "^3.2.24",
         "bcrypt": "^5.1.1",
         "cloudinary": "^1.41.3",
         "cors": "^2.8.5",
