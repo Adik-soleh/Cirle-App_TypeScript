@@ -148,7 +148,7 @@ class API {
 
     POST = async (data: FormData): Promise<string> => {
         try {
-            const response: AxiosResponse = await axios.post(`${CONFIGS.BASE_URL}/posts`, data, {
+            const response: AxiosResponse = await axios.post(`${CONFIGS.BASE_URL}/vibes`, data, {
                 headers: {
                     Authorization: `Bearer ${this.GET_TOKEN()}`,
                 },
