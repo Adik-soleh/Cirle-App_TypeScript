@@ -112,7 +112,7 @@ class API {
 
     GET_ALL_POSTS = async (): Promise<VibeType[]> => {
         try {
-            const response = await axios.get(`${CONFIGS.BASE_URL}/posts`, {
+            const response = await axios.get(`${CONFIGS.BASE_URL}/vibes`, {
                 headers: {
                     Authorization: `Bearer ${this.GET_TOKEN()}`,
                 },

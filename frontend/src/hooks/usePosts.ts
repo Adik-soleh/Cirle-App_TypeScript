@@ -15,21 +15,21 @@ function usePost(
     const queryClient: QueryClient = useQueryClient()
 
     const { data: vibes } = useQuery<VibeType[]>({
-        queryKey: ['vibes'],
+        queryKey: ['posts'],
         queryFn: API.GET_ALL_POSTS,
     })
 
     const postVibe = useMutation({
         mutationFn: POST_VIBE,
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['vibes'] })
+            queryClient.invalidateQueries({ queryKey: ['posts'] })
         },
     })
 
     const deleteVibe = useMutation({
         mutationFn: DELETE_VIBE,
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['vibes'] })
+            queryClient.invalidateQueries({ queryKey: ['posts'] })
         },
     })
 
