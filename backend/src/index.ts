@@ -56,11 +56,11 @@ async function main() {
   v1.post("/login", AuthControllers.login);
   v1.patch("/auth/reset", authenticate, AuthControllers.resetPassword);
 
-  v1.get("/vibes", authenticate, Redis.getVibes, VibeControllers.getVibes);
-  v1.get("/vibes/:id", authenticate, VibeControllers.getVibe);
-  v1.get("/vibes/user/:id", authenticate, VibeControllers.getUserVibes);
-  v1.post("/vibes",uploader.single("image"),authenticate,VibeControllers.postVibes);
-  v1.delete("/vibes/:id", authenticate, VibeControllers.deleteVibe);
+  v1.get("/posts", authenticate, Redis.getVibes, VibeControllers.getVibes);
+  v1.get("/posts/:id", authenticate, VibeControllers.getVibe);
+  v1.get("/posts/user/:id", authenticate, VibeControllers.getUserVibes);
+  v1.post("/posts",uploader.single("image"),authenticate,VibeControllers.postVibes);
+  v1.delete("/posts/:id", authenticate, VibeControllers.deleteVibe);
 
   v1.get("/follow/:id", authenticate, FollowControllers.follow);
   v1.get("/unfollow/:id", authenticate, FollowControllers.unfollow);
