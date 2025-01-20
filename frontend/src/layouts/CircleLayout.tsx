@@ -57,13 +57,13 @@ function CircleLayout() {
           justifyItems={"center"}
           backgroundColor={"black"}
         >
-          <Flex gap={"4.5rem"} justifyContent={"center"} p={"1rem"}>
-            <BiHome onClick={() => navigate("/")} size={"25px"} />
-            <BiSearch onClick={() => navigate("/search")} size={"25px"} />
-            <CiSquarePlus onClick={onOpen} size={"25px"} />
-            <BiHeart onClick={() => navigate("/follows")} size={"25px"} />
+          <Flex gap={"3.5rem"} justifyContent={"center"} p={"1rem"} textAlign={"center"}>
+            <BiHome onClick={() => navigate("/")} size={"50px"} />
+            <BiSearch onClick={() => navigate("/search")} size={"50px"} />
+            <CiSquarePlus onClick={onOpen} size={"50px"} />
+            <BiHeart onClick={() => navigate("/follows")} size={"50px"} />
             <Avatar
-              sx={{ width: 8, height: 8 }}
+              sx={{ width: 10, height: 10 }}
               src={loggedUser?.avatar}
               onClick={() => navigate("/me")}
             />
