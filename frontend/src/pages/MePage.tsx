@@ -70,15 +70,7 @@ function MePage({ dark }: MePageProps) {
         <Link to={"/"}>
           <NavigationHeading icon={<BiLeftArrowAlt />} text={name} sticky />
         </Link>
-        {isMobile && (
-          <Flex justifyContent={"flex-end"} mb={"1rem"}>
-            <LogoutItem
-              icon={<BiLogOut />}
-              text={"Logout"}
-              onLogout={onLogout}
-            />
-          </Flex>
-        )}
+        
         <Card bg={bg} px={"1rem"} color={"circle.font"} mb={"1.5rem"}>
           <ProfileCardHeader
             buttonText={"Edit Profile"}
@@ -97,6 +89,15 @@ function MePage({ dark }: MePageProps) {
             totalFollower={totalFollower}
             totalFollowing={totalFollowing}
           />
+          {isMobile && (
+          <Flex justifyContent={"flex-start"} mt={"2rem"} mb={"1rem"}>
+            <LogoutItem
+              icon={<BiLogOut />}
+              text={"Logout"}
+              onLogout={onLogout}
+            />
+          </Flex>
+        )}
         </Card>
         <BrandTabs
           leftTitle={

@@ -14,14 +14,12 @@ import NewVibe from "@/components/post/NewPost";
 import DeveloperCard from "@/components/rightPanel/DeveloperCard";
 import ProfileCard from "@/components/rightPanel/ProfileCard";
 import SuggestionCard from "@/components/rightPanel/SuggestionCard";
-import api from "@/connect/api";
-import { unsetLoggedUser } from "@/features/auth/authSlice";
 import { usePost } from "@/hooks/usePosts";
 import { RootState } from "@/redux";
 import { UserType } from "@/types/types";
-import { BiHeart, BiHome, BiLogOut, BiSearch } from "react-icons/bi";
+import { BiHeart, BiHome, BiSearch } from "react-icons/bi";
 import { CiSquarePlus } from "react-icons/ci";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function CircleLayout() {
   const loggedUser: UserType | undefined = useSelector(
@@ -30,14 +28,6 @@ function CircleLayout() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [, onPost] = usePost({ onClose });
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  async function onLogout() {
-    api.SET_TOKEN("");
-    dispatch(unsetLoggedUser());
-
-    navigate("/");
-  }
 
   const isMobile = useBreakpointValue({ base: true, md: false });
 
@@ -73,8 +63,6 @@ function CircleLayout() {
             p={"1rem"}
             textAlign={"center"}
           >
-            <BiLogOut onClick={onLogout} size={"50px"} color="red" />
-            {/* <LogoutItem icon={<BiLogOut />} text={"Logout"} /> */}
             <BiHome onClick={() => navigate("/")} size={"50px"} color="white" />
             <BiSearch
               onClick={() => navigate("/search")}
