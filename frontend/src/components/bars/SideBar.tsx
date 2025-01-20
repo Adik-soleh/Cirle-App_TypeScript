@@ -7,7 +7,7 @@ interface SideBarProps {
 
 function SideBar({ children }: SideBarProps): JSX.Element {
     return (
-        <Box as="aside" pos={'sticky'} top={0} py={'2rem'}>
+        <Box as="aside" w={'40%'} top={0} py={'2rem'}>
             {children}
         </Box>
     )

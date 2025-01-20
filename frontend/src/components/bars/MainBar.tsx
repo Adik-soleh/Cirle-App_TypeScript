@@ -8,7 +8,7 @@ interface MainBarProps {
 
 function MainBar({ children }: MainBarProps) {
     return (
-        <Box as={'section'} border={'1px'} borderColor={'circle.darker'} minHeight={'100vh'}>
+        <Box as={'section'} w={'100%'} border={'1px'} borderColor={'circle.darker'} minHeight={'100vh'}>
             {children}
         </Box>
     )
