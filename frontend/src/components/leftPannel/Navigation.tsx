@@ -35,7 +35,7 @@ function Navigation() {
       pr={"2rem"}
       gap={"2rem"}
       height={"90vh"}
-      // pos={'fixed'}
+      ml={"2rem"}
       w={"266px"}
     >
       <Image

@@ -12,7 +12,7 @@ function BrandModal({ isOpen, onClose, children, size }: BrandModalProps) {
     return (
         <Modal isOpen={isOpen} onClose={onClose} size={size}>
             <ModalOverlay />
-            <ModalContent opacity={'0'} bg={'circle.backdrop'}>
+            <ModalContent borderRadius={'2xl'} bg={'black'}>
                 {children}
             </ModalContent>
         </Modal>

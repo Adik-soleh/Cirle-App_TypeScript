@@ -20,7 +20,7 @@ function BrandCard({ children, noSpace, dark }: BrandCardProps) {
             : 'white';
 
     return (
-        <Box margin={0} p={0} pl={noSpace ? 0 : '2rem'} mb="1rem">
+        <Box margin={0} p={0} pl={noSpace ? 0 : '2rem'} mb="1rem" mr={"2rem"}>
             <Card
                 color={colorMode === 'dark' ? 'circle.font.dark' : 'circle.font.light'}
                 bg={bg}

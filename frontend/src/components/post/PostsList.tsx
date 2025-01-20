@@ -13,7 +13,7 @@ interface VibeListProps {
 function PostsList({ vibes, noLink }: VibeListProps) {
     if (vibes.length) {
         return (
-            <Box>
+            <Box >
                 {vibes.map((vibe) => {
                     if (noLink) {
                         return <VibeItem vibe={vibe} key={vibe.id} isReply />
