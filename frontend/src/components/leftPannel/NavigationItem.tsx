@@ -7,7 +7,7 @@ import GhostButton from '@/components/buttons/GhostButton'
 interface NavigationItemProps {
     onLogout?: () => void
     icon: ReactNode
-    text: string | any
+    text?: string | any
     avatar?: number | string | any
 }
 
