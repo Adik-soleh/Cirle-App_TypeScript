@@ -1,4 +1,10 @@
-import { Box, Button, Flex, useDisclosure, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Flex,
+  useBreakpointValue,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { Outlet, useNavigate } from "react-router-dom";
 
 import SideBar from "@/components/bars/SideBar";
@@ -9,10 +15,16 @@ import DeveloperCard from "@/components/rightPanel/DeveloperCard";
 import ProfileCard from "@/components/rightPanel/ProfileCard";
 import SuggestionCard from "@/components/rightPanel/SuggestionCard";
 import { usePost } from "@/hooks/usePosts";
-import { BiHeart, BiHome, BiSearch, BiUser } from "react-icons/bi";
+import { RootState } from "@/redux";
+import { UserType } from "@/types/types";
+import { BiHeart, BiHome, BiSearch } from "react-icons/bi";
 import { CiSquarePlus } from "react-icons/ci";
+import { useSelector } from "react-redux";
 
 function CircleLayout() {
+  const loggedUser: UserType | undefined = useSelector(
+    (states: RootState) => states.loggedUser.value
+  );
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [, onPost] = usePost({ onClose });
   const navigate = useNavigate();
@@ -37,74 +49,36 @@ function CircleLayout() {
         )}
       </Flex>
       {isMobile && (
-      <Box
-        position={"fixed"}
-        bottom={0}
-        w={"100%"}
-        zIndex={100}
-        justifyItems={"center"}
-        backgroundColor={"gray.900"}
-      >
-        <Flex gap={"1rem"} justifyContent={"center"}>
-          <Button onClick={() => navigate("/")}>
-            <BiHome />
-          </Button>
-          <Button onClick={() => navigate("/search")}>
-            <BiSearch />
-          </Button>
-          <Button onClick={onOpen}>
-            <CiSquarePlus />
-          </Button>
-          <Button onClick={() => navigate("/follows")}>
-            <BiHeart />
-          </Button>
-          <Button onClick={() => navigate("/me")}>
-            <BiUser />
-          </Button>
-          <BrandModal isOpen={isOpen} onClose={onClose} size={"xl"}>
-            <Box pt={".5rem"}>
-              <NewVibe
-                placeholder={"What is happening?!"}
-                imagePreviewId={"atModal"}
-                onPost={onPost}
-              />
-            </Box>
-          </BrandModal>
-        </Flex>
-      </Box>
-      )}
-      {/* {isMobile && (
         <Box
           position={"fixed"}
-          top={0}
-          left={0}
+          bottom={0}
           w={"100%"}
-          h={"100%"}
-          zIndex={50}
-          backgroundColor={"rgba(0, 0, 0, 0.8)"}
-          color={"white"}
-          display={"flex"}
-          flexDirection={"column"}
-          justifyContent={"center"}
-          alignItems={"center"}
+          zIndex={100}
+          justifyItems={"center"}
+          backgroundColor={"black"}
         >
-          <Button onClick={() => navigate("/")} w={"70%"} mb={4}>
-            <BiHome /> Home
-          </Button>
-          <Button onClick={() => navigate("/search")} w={"70%"} mb={4}>
-            <BiSearch /> Search
-          </Button>
-          <Button onClick={onOpen} w={"70%"} mb={4}>
-            <CiSquarePlus /> Add Post
-          </Button>
-          <Button onClick={() => navigate("/follows")} w={"70%"} mb={4}>
-            <BiHeart /> Follows
-          </Button>
-          <Button onClick={() => navigate("/me")} w={"70%"}>
-            <BiUser /> Profile
-          </Button>
+          <Flex gap={"4.5rem"} justifyContent={"center"} p={"1rem"}>
+            <BiHome onClick={() => navigate("/")} size={"25px"} />
+            <BiSearch onClick={() => navigate("/search")} size={"25px"} />
+            <CiSquarePlus onClick={onOpen} size={"25px"} />
+            <BiHeart onClick={() => navigate("/follows")} size={"25px"} />
+            <Avatar
+              sx={{ width: 8, height: 8 }}
+              src={loggedUser?.avatar}
+              onClick={() => navigate("/me")}
+            />
+            <BrandModal isOpen={isOpen} onClose={onClose} size={"xl"}>
+              <Box pt={".5rem"}>
+                <NewVibe
+                  placeholder={"What is happening?!"}
+                  imagePreviewId={"atModal"}
+                  onPost={onPost}
+                />
+              </Box>
+            </BrandModal>
+          </Flex>
         </Box>
-      )} */}
+      )}
     </>
   );
 }
